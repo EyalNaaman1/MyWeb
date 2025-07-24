@@ -367,50 +367,6 @@
             border-color: var(--white);
         }
 
-        /* Stats Section with enhanced animations */
-        .stats {
-            padding: 80px 0;
-            background: var(--white);
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            text-align: center;
-        }
-
-        .stat-item {
-            padding: 24px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .stat-item.animate {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--text-dark);
-            margin-bottom: 8px;
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            transition: all 0.1s ease;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text-medium);
-        }
-
         /* About Section */
         .about {
             padding: 120px 0;
