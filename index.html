@@ -1,5 +1,5 @@
-<html lang="he" dir="rtl"><head></head><body><section id="contact" class="contact">
-
+<html lang="he" dir="rtl">
+<head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,9 @@
     <meta name="description" content="עו"ד משה נעמן - עורך דין ונוטריון מנוסה בחיפה. התמחות בדין פלילי, מקרקעין, ירושות וצוואות. 20+ שנות ניסיון במערכת המשפט הישראלית.">
     <meta name="keywords" content="עורך דין חיפה, נוטריון חיפה, דין פלילי, מקרקעין, ירושות וצוואות, עורך דין ונוטריון">
     <meta name="author" content="עו"ד משה נעמן">
+
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap"></noscript>
     
     <style>
         :root {
@@ -27,10 +30,10 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Heebo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             min-height: 100vh;
         }
 
@@ -69,7 +72,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            color: #2c3e50;
+            color: var(--text-dark);
             text-decoration: none;
             font-size: 0.95rem;
             font-weight: 600;
@@ -86,7 +89,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
             transition: left 0.3s ease;
             border-radius: 25px;
         }
@@ -96,7 +99,7 @@
         }
 
         .floating-nav-item:hover {
-            color: white;
+            color: var(--white);
             transform: translateY(-2px);
         }
 
@@ -114,69 +117,12 @@
         header {
             display: none;
         }
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 0;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #2c3e50;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: #667eea;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            right: 0;
-            background: #667eea;
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
+        
         /* Hero Section */
         .hero {
             padding: 120px 0 80px 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -206,6 +152,7 @@
 
         .hero h1 {
             font-size: 3.5rem;
+            font-weight: 700;
             margin-bottom: 1rem;
             opacity: 0;
             animation: slideUp 1s ease forwards;
@@ -213,6 +160,7 @@
 
         .hero p {
             font-size: 1.3rem;
+            font-weight: 400;
             margin-bottom: 2rem;
             opacity: 0;
             animation: slideUp 1s ease 0.3s forwards;
@@ -232,27 +180,27 @@
         .cta-button {
             display: inline-block;
             padding: 15px 40px;
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-            color: white;
+            background: linear-gradient(45deg, var(--accent-color), #d97706);
+            color: var(--white);
             text-decoration: none;
             border-radius: 50px;
-            font-weight: bold;
+            font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(238, 90, 36, 0.3);
+            box-shadow: 0 10px 30px rgba(201, 169, 110, 0.3);
             opacity: 0;
             animation: slideUp 1s ease 0.6s forwards;
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(238, 90, 36, 0.4);
+            box-shadow: 0 15px 40px rgba(201, 169, 110, 0.4);
         }
 
         /* About Section */
         .about {
             padding: 100px 0;
-            background: white;
+            background: var(--white);
         }
 
         .about-content {
@@ -264,8 +212,9 @@
 
         .about-text h2 {
             font-size: 2.5rem;
+            font-weight: 700;
             margin-bottom: 2rem;
-            color: #2c3e50;
+            color: var(--text-dark);
             position: relative;
         }
 
@@ -276,13 +225,14 @@
             right: 0;
             width: 60px;
             height: 4px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
             border-radius: 2px;
         }
 
         .about-text p {
             font-size: 1.1rem;
-            color: #666;
+            font-weight: 400;
+            color: var(--text-light);
             margin-bottom: 1.5rem;
             line-height: 1.8;
         }
@@ -290,14 +240,14 @@
         .image-placeholder {
             width: 100%;
             height: 400px;
-            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+            background: linear-gradient(45deg, var(--light-gray), #e2e8f0);
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.2rem;
-            color: #666;
-            border: 2px dashed #dee2e6;
+            color: var(--text-light);
+            border: 2px dashed var(--border-color);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -310,7 +260,7 @@
             right: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            background: linear-gradient(45deg, transparent, rgba(30, 58, 138, 0.1), transparent);
             animation: shimmer 3s infinite;
         }
 
@@ -327,14 +277,15 @@
         /* Services Section */
         .services {
             padding: 100px 0;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background: linear-gradient(135deg, var(--light-gray) 0%, #e9ecef 100%);
         }
 
         .services h2 {
             text-align: center;
             font-size: 2.5rem;
+            font-weight: 700;
             margin-bottom: 3rem;
-            color: #2c3e50;
+            color: var(--text-dark);
         }
 
         .services-grid {
@@ -344,7 +295,7 @@
         }
 
         .service-card {
-            background: white;
+            background: var(--white);
             padding: 40px 30px;
             border-radius: 20px;
             text-align: center;
@@ -361,7 +312,7 @@
             right: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
         }
 
         .service-card:hover {
@@ -372,38 +323,41 @@
         .service-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
             border-radius: 50%;
             margin: 0 auto 2rem;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2rem;
-            color: white;
+            color: var(--white);
         }
 
         .service-card h3 {
             font-size: 1.5rem;
+            font-weight: 600;
             margin-bottom: 1rem;
-            color: #2c3e50;
+            color: var(--text-dark);
         }
 
         .service-card p {
-            color: #666;
+            color: var(--text-light);
+            font-weight: 400;
             line-height: 1.6;
         }
 
         /* FAQ Section */
         .faq {
             padding: 100px 0;
-            background: white;
+            background: var(--white);
         }
 
         .faq h2 {
             text-align: center;
             font-size: 2.5rem;
+            font-weight: 700;
             margin-bottom: 3rem;
-            color: #2c3e50;
+            color: var(--text-dark);
         }
 
         .faq-container {
@@ -413,7 +367,7 @@
 
         .faq-item {
             margin-bottom: 20px;
-            border: 1px solid #e0e0e0;
+            border: 1px solid var(--border-color);
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
@@ -426,38 +380,38 @@
 
         .faq-question {
             padding: 25px 30px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background: linear-gradient(135deg, var(--light-gray) 0%, #e9ecef 100%);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
             font-size: 1.1rem;
-            color: #2c3e50;
+            color: var(--text-dark);
             transition: all 0.3s ease;
         }
 
         .faq-question:hover {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
         }
 
         .faq-icon {
             width: 30px;
             height: 30px;
             border-radius: 50%;
-            background: #667eea;
+            background: var(--primary-color);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--white);
             font-size: 1.2rem;
             transition: all 0.3s ease;
         }
 
         .faq-question:hover .faq-icon {
-            background: white;
-            color: #667eea;
+            background: var(--white);
+            color: var(--primary-color);
             transform: rotate(180deg);
         }
 
@@ -465,7 +419,7 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
-            background: white;
+            background: var(--white);
         }
 
         .faq-answer.active {
@@ -474,16 +428,17 @@
 
         .faq-answer-content {
             padding: 25px 30px;
-            color: #666;
+            color: var(--text-light);
             line-height: 1.7;
             font-size: 1rem;
+            font-weight: 400;
         }
 
         /* Contact Section */
         .contact {
             padding: 100px 0;
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
+            background: linear-gradient(135deg, var(--text-dark) 0%, #374151 100%);
+            color: var(--white);
         }
 
         .contact-content {
@@ -495,6 +450,7 @@
 
         .contact h2 {
             font-size: 2.5rem;
+            font-weight: 700;
             margin-bottom: 2rem;
         }
 
@@ -509,6 +465,7 @@
             align-items: center;
             gap: 1rem;
             font-size: 1.1rem;
+            font-weight: 400;
         }
 
         .contact-item i {
@@ -546,40 +503,43 @@
             border-radius: 10px;
             background: rgba(255, 255, 255, 0.9);
             font-size: 1rem;
+            font-family: inherit;
             transition: all 0.3s ease;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            background: white;
-            box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+            background: var(--white);
+            box-shadow: 0 0 20px rgba(30, 58, 138, 0.3);
         }
 
         .submit-button {
             width: 100%;
             padding: 15px;
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-            color: white;
+            background: linear-gradient(45deg, var(--accent-color), #d97706);
+            color: var(--white);
             border: none;
             border-radius: 10px;
             font-size: 1.1rem;
-            font-weight: bold;
+            font-weight: 600;
+            font-family: inherit;
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
         .submit-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(238, 90, 36, 0.3);
+            box-shadow: 0 10px 30px rgba(201, 169, 110, 0.3);
         }
 
         /* Footer */
         footer {
             background: #1a1a1a;
-            color: white;
+            color: var(--white);
             text-align: center;
             padding: 40px 0;
+            font-weight: 400;
         }
 
         /* Responsive Design */
@@ -643,7 +603,27 @@
             transform: translateY(0);
         }
         
+    /* Lazy loading images */
+        img {
+            loading: lazy;
+        }
+        /* Optimized image styles */
+        .hero-logo img,
+        .lawyer-image img {
+            will-change: transform;
+            transition: transform 0.3s ease;
+        }
+        /* Reduced motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
     </style>
+</head>
+<body>
 
 
     <!-- Floating Navigation -->
@@ -664,7 +644,7 @@
             <span class="nav-icon">❓</span>
             <span class="nav-text">שאלות נפוצות</span>
         </a>
-        <a href="#con" class="floating-nav-item">
+        <a href="#contact" class="floating-nav-item">
             <span class="nav-icon">📞</span>
             <span class="nav-text">צור קשר</span>
         </a>
@@ -674,7 +654,7 @@
    <div class="container">
        <div class="hero-content">
            <div class="hero-logo" style="width: 150px; height: 150px; overflow: hidden; border-radius: 50%; float: left; margin-left: 2rem; margin-bottom: 2rem;">
-               <img src="image2.jpg" alt="לוגו עו"ד משה נעמן" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+               <img src="image2.jpg" alt="לוגו עו"ד משה נעמן" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="eager"/>
            </div>
            <h1>עו"ד משה נעמן</h1>
            <p>עורך דין ונוטריון עם ניסיון וותק של מעל 20 שנה במערכת המשפט </p>
@@ -805,7 +785,7 @@
     </section>
 
     
-        <section class="con" id="con">
+        <section class="contact" id="contact">
         <div class="container">
             <div class="contact-content">
                 <div class="fade-in visible">
@@ -837,7 +817,6 @@
             </div>
         </div>
     </section>
-    </section>
 
     <footer>
         <div class="container">
@@ -846,13 +825,17 @@
     </footer>
 
     <script>
-        // Smooth scrolling
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
 
@@ -896,27 +879,52 @@
                 // Close all other FAQ items
                 document.querySelectorAll('.faq-item').forEach(item => {
                     if (item !== faqItem) {
-                        item.querySelector('.faq-answer').classList.remove('active');
-                        item.querySelector('.faq-icon').textContent = '+';
+                        const otherAnswer = item.querySelector('.faq-answer');
+                        const otherIcon = item.querySelector('.faq-icon');
+                        if (otherAnswer && otherIcon) {
+                            otherAnswer.classList.remove('active');
+                            otherIcon.textContent = '+';
+                        }
                     }
                 });
                 
                 // Toggle current FAQ item
-                if (answer.classList.contains('active')) {
-                    answer.classList.remove('active');
-                    icon.textContent = '+';
-                } else {
-                    answer.classList.add('active');
-                    icon.textContent = '−';
+                if (answer && icon) {
+                    if (answer.classList.contains('active')) {
+                        answer.classList.remove('active');
+                        icon.textContent = '+';
+                    } else {
+                        answer.classList.add('active');
+                        icon.textContent = '−';
+                    }
                 }
             });
         });
 
-        // Form submission
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('תודה על פנייתך! נחזור אליך בהקדם האפשרי.');
+        // Performance optimizations
+        let ticking = false;
+        
+        function updateOnScroll() {
+            // Add any scroll-based updates here
+            ticking = false;
+        }
+        
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(updateOnScroll);
+                ticking = true;
+            }
+        }
+        
+        window.addEventListener('scroll', requestTick);
+        
+        // Preload critical images
+        const preloadImages = ['image1.jpg', 'image2.jpg'];
+        preloadImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
         });
     </script>
 
-</body></html>
+</body>
+</html>
