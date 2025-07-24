@@ -1016,7 +1016,7 @@
 <body class="loaded">
     <!-- Enhanced Floating Navigation -->
     <div class="floating-nav">
-        <a href="#hero" class="floating-nav-item">
+        <a href="#hero" class="floating-nav-item active">
             <span class="nav-icon">🏠</span>
             <span class="nav-text">דף בית</span>
         </a>
@@ -1032,7 +1032,7 @@
             <span class="nav-icon">❓</span>
             <span class="nav-text">שאלות נפוצות</span>
         </a>
-        <a href="#contact" class="floating-nav-item active">
+        <a href="#contact" class="floating-nav-item">
             <span class="nav-icon">📞</span>
             <span class="nav-text">צור קשר</span>
         </a>
@@ -1333,10 +1333,20 @@
 
     <!-- Quick Contact Buttons -->
     <div style="position: fixed; bottom: 20px; left: 20px; z-index: 1500; display: flex; flex-direction: column; gap: 10px;">
-        <a href="tel:0544679144" style="width: 60px; height: 60px; background: var(--accent-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 24px; box-shadow: var(--shadow-large); transition: 0.3s; transform: scale(1);" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+        <a href="tel:0544679144" style="
+            width: 60px; height: 60px; background: var(--accent-gradient); 
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            color: white; text-decoration: none; font-size: 24px; box-shadow: var(--shadow-large);
+            transition: all 0.3s ease;
+        " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
             📞
         </a>
-        <a href="https://wa.me/972544679144" target="_blank" style="width: 60px; height: 60px; background: rgb(37, 211, 102); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 24px; box-shadow: var(--shadow-large); transition: 0.3s; transform: scale(1);" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+        <a href="https://wa.me/972544679144" target="_blank" style="
+            width: 60px; height: 60px; background: #25D366; 
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            color: white; text-decoration: none; font-size: 24px; box-shadow: var(--shadow-large);
+            transition: all 0.3s ease;
+        " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
             💬
         </a>
     </div>
