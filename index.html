@@ -1,26 +1,38 @@
-<html lang="he" dir="rtl">
-<head>
-
+<html lang="he" dir="rtl"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>עו"ד משה נעמן - עורך דין ונוטריון בחיפה | שירותים משפטיים מקצועיים</title>
-    <meta name="description" content="עו"ד משה נעמן - עורך דין ונוטריון מנוסה בחיפה. התמחות בדין פלילי, מקרקעין, ירושות וצוואות. 20+ שנות ניסיון במערכת המשפט הישראלית.">
+    <meta name="description" content="עו" ד="" משה="" נעמן="" -="" עורך="" דין="" ונוטריון="" מנוסה="" בחיפה.="" התמחות="" בדין="" פלילי,="" מקרקעין,="" ירושות="" וצוואות.="" 20+="" שנות="" ניסיון="" במערכת="" המשפט="" הישראלית."="">
     <meta name="keywords" content="עורך דין חיפה, נוטריון חיפה, דין פלילי, מקרקעין, ירושות וצוואות, עורך דין ונוטריון">
-    <meta name="author" content="עו"ד משה נעמן">
+    <meta name="author" content="עו" ד="" משה="" נעמן"="">
 
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap"></noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&display=swap"></noscript>
     
     <style>
         :root {
-            --primary-color: #1e3a8a;
-            --secondary-color: #3b82f6;
-            --accent-color: #c9a96e;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
+            --primary-color: #1a1a1a;
+            --secondary-color: #2d2d2d;
+            --accent-color: #d4af37;
+            --primary-gradient: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            --secondary-gradient: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            --accent-gradient: linear-gradient(135deg, #d4af37 0%, #f59e0b 100%);
+            --text-dark: #0f172a;
+            --text-medium: #334155;
+            --text-light: #64748b;
             --white: #ffffff;
-            --light-gray: #f8fafc;
-            --border-color: #e2e8f0;
+            --light-bg: #f8fafc;
+            --border-light: #e2e8f0;
+            --border-medium: #cbd5e1;
+            --success-color: #10b981;
+            --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-large: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-luxury: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --border-radius-sm: 8px;
+            --border-radius-md: 12px;
+            --border-radius-lg: 20px;
+            --border-radius-xl: 24px;
         }
         
         * {
@@ -30,51 +42,54 @@
         }
 
         body {
-            font-family: 'Heebo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
+            font-family: 'Assistant', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
             color: var(--text-dark);
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            min-height: 100vh;
+            background: var(--white);
+            font-size: 16px;
+            scroll-behavior: smooth;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
         /* Floating Navigation Bar */
         .floating-nav {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 12px 20px;
+            border-radius: 50px;
+            box-shadow: var(--shadow-luxury);
             display: flex;
-            justify-content: center;
             gap: 5px;
             transition: all 0.3s ease;
+            border: 1px solid rgba(212, 175, 55, 0.2);
         }
 
         .floating-nav:hover {
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            background: rgba(26, 26, 26, 0.98);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.35);
+            border-color: rgba(212, 175, 55, 0.4);
         }
 
         .floating-nav-item {
-            padding: 12px 25px;
+            padding: 10px 20px;
             border-radius: 25px;
             background: transparent;
             display: flex;
             align-items: center;
             gap: 8px;
-            color: var(--text-dark);
+            color: var(--white);
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 600;
             transition: all 0.3s ease;
             position: relative;
@@ -89,12 +104,13 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            background: var(--accent-gradient);
             transition: left 0.3s ease;
             border-radius: 25px;
         }
 
-        .floating-nav-item:hover::before {
+        .floating-nav-item:hover::before,
+        .floating-nav-item.active::before {
             left: 0;
         }
 
@@ -113,31 +129,40 @@
             font-size: 1.1rem;
         }
 
-        /* Header - Hidden */
-        header {
-            display: none;
-        }
-        
         /* Hero Section */
         .hero {
-            padding: 120px 0 80px 0;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            min-height: 100vh;
+            background: var(--secondary-gradient);
             color: var(--white);
-            text-align: center;
             position: relative;
             overflow: hidden;
+            display: flex;
+            align-items: center;
         }
 
         .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .hero::after {
             content: '';
             position: absolute;
             top: -50%;
             right: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: float 20s infinite linear;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="0.5" fill="rgba(255,255,255,0.02)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+            animation: float 30s infinite linear;
+            z-index: 1;
         }
 
         @keyframes float {
@@ -148,42 +173,142 @@
         .hero-content {
             position: relative;
             z-index: 2;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            min-height: 100vh;
+            padding: 120px 0 60px;
+        }
+
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .hero-badge {
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-soft);
+            opacity: 0;
+            animation: slideUp 1s ease 0.2s forwards;
+            width: fit-content;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin: 0;
+            color: var(--white);
             opacity: 0;
-            animation: slideUp 1s ease forwards;
+            animation: slideUp 1s ease 0.4s forwards;
+            line-height: 1.2;
         }
 
-        .hero p {
-            font-size: 1.3rem;
+        .hero h1 .highlight {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
             font-weight: 400;
-            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
             opacity: 0;
-            animation: slideUp 1s ease 0.3s forwards;
+            animation: slideUp 1s ease 0.6s forwards;
+            max-width: 500px;
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            animation: slideInRight 1s ease 0.8s forwards;
+        }
+
+        .hero-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius-xl);
+            padding: 40px;
+            text-align: center;
+            box-shadow: var(--shadow-luxury);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--accent-gradient);
         }
 
         .hero-logo {
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
             overflow: hidden;
             border-radius: 50%;
-            float: left;
-            margin-left: 2rem;
-            margin-bottom: 2rem;
-            transform: scale(0) rotate(180deg);
-            opacity: 0;
-            animation: logoAppear 1s ease 0.9s forwards;
+            margin: 0 auto 24px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border: 4px solid rgba(212, 175, 55, 0.3);
         }
 
-        @keyframes logoAppear {
+        .hero-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--white);
+        }
+
+        .hero-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+            margin-bottom: 24px;
+        }
+
+        .experience-badge {
+            background: var(--accent-gradient);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
             to {
-                transform: scale(1) rotate(0deg);
                 opacity: 1;
+                transform: translateX(0);
             }
         }
 
@@ -198,131 +323,208 @@
             }
         }
 
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
         .cta-button {
-            display: inline-block;
-            padding: 15px 40px;
-            background: linear-gradient(45deg, var(--accent-color), #d97706);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            background: var(--accent-gradient);
             color: var(--white);
             text-decoration: none;
             border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
+            font-weight: 700;
+            font-size: 1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(201, 169, 110, 0.3);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
             opacity: 0;
-            animation: slideUp 1s ease 0.6s forwards;
+            animation: slideUp 1s ease 1s forwards;
+            border: 2px solid transparent;
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(201, 169, 110, 0.4);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: var(--white);
+            animation-delay: 1.2s;
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--white);
+        }
+
+        /* Stats Section with enhanced animations */
+        .stats {
+            padding: 80px 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 24px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .stat-item.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: all 0.3s ease;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-medium);
         }
 
         /* About Section */
         .about {
-            padding: 100px 0;
-            background: var(--white);
+            padding: 120px 0;
+            background: var(--light-bg);
         }
 
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 80px;
             align-items: center;
         }
 
         .about-text h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
             color: var(--text-dark);
-            position: relative;
+            line-height: 1.3;
         }
 
-        .about-text h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            right: 0;
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            border-radius: 2px;
+        .about-text .highlight {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .about-text p {
             font-size: 1.1rem;
-            font-weight: 400;
-            color: var(--text-light);
+            color: var(--text-medium);
             margin-bottom: 1.5rem;
             line-height: 1.8;
         }
 
-        .image-placeholder {
-            width: 100%;
-            height: 400px;
-            background: linear-gradient(45deg, var(--light-gray), #e2e8f0);
-            border-radius: 20px;
+        .credentials {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            color: var(--text-light);
-            border: 2px dashed var(--border-color);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            gap: 16px;
+            margin-top: 2rem;
+            flex-wrap: wrap;
         }
 
-        .image-placeholder::before {
+        .credential-badge {
+            padding: 8px 16px;
+            background: var(--white);
+            border: 2px solid var(--border-light);
+            border-radius: var(--border-radius-lg);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-medium);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .lawyer-image {
+            width: 100%;
+            height: 500px;
+            border-radius: var(--border-radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-large);
+            position: relative;
+        }
+
+        .lawyer-image::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(30, 58, 138, 0.1), transparent);
-            animation: shimmer 3s infinite;
+            inset: 0;
+            background: linear-gradient(45deg, rgba(26, 26, 26, 0.1), rgba(45, 45, 45, 0.1));
+            z-index: 1;
         }
 
-        @keyframes shimmer {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
-
-        .image-placeholder:hover {
-            transform: scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        .lawyer-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         /* Services Section */
         .services {
-            padding: 100px 0;
-            background: linear-gradient(135deg, var(--light-gray) 0%, #e9ecef 100%);
+            padding: 120px 0;
+            background: var(--white);
         }
 
         .services h2 {
             text-align: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 3rem;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
             color: var(--text-dark);
+        }
+
+        .services .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-medium);
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
         }
 
         .service-card {
             background: var(--white);
-            padding: 40px 30px;
-            border-radius: 20px;
+            padding: 40px 32px;
+            border-radius: var(--border-radius-xl);
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
+            border: 1px solid var(--border-light);
             overflow: hidden;
         }
 
@@ -330,21 +532,22 @@
             content: '';
             position: absolute;
             top: 0;
+            left: 0;
             right: 0;
-            width: 100%;
             height: 4px;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            background: var(--accent-gradient);
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-large);
+            border-color: var(--border-medium);
         }
 
         .service-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            background: var(--secondary-gradient);
             border-radius: 50%;
             margin: 0 auto 2rem;
             display: flex;
@@ -352,227 +555,324 @@
             justify-content: center;
             font-size: 2rem;
             color: var(--white);
+            box-shadow: var(--shadow-medium);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
         }
 
         .service-card h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
+            font-size: 1.4rem;
+            font-weight: 700;
             margin-bottom: 1rem;
             color: var(--text-dark);
         }
 
         .service-card p {
-            color: var(--text-light);
-            font-weight: 400;
-            line-height: 1.6;
+            color: var(--text-medium);
+            line-height: 1.7;
+            font-size: 1rem;
         }
 
         /* FAQ Section */
         .faq {
-            padding: 100px 0;
-            background: var(--white);
+            padding: 120px 0;
+            background: var(--light-bg);
         }
 
         .faq h2 {
             text-align: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 3rem;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 4rem;
             color: var(--text-dark);
         }
 
         .faq-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .faq-item {
-            margin-bottom: 20px;
-            border: 1px solid var(--border-color);
-            border-radius: 15px;
+            margin-bottom: 24px;
+            border: 1px solid var(--border-light);
+            border-radius: var(--border-radius-lg);
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            background: var(--white);
+            box-shadow: var(--shadow-soft);
             transition: all 0.3s ease;
         }
 
         .faq-item:hover {
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--border-medium);
         }
 
         .faq-question {
-            padding: 25px 30px;
-            background: linear-gradient(135deg, var(--light-gray) 0%, #e9ecef 100%);
+            padding: 32px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1.1rem;
             color: var(--text-dark);
             transition: all 0.3s ease;
+            background: var(--white);
         }
 
         .faq-question:hover {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            background: var(--light-bg);
+        }
+
+        .faq-question.active {
+            background: var(--secondary-gradient);
             color: var(--white);
         }
 
         .faq-icon {
-            width: 30px;
-            height: 30px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
-            background: var(--primary-color);
+            background: var(--secondary-gradient);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--white);
             font-size: 1.2rem;
+            font-weight: 700;
             transition: all 0.3s ease;
         }
 
-        .faq-question:hover .faq-icon {
+        .faq-question.active .faq-icon {
             background: var(--white);
-            color: var(--primary-color);
-            transform: rotate(180deg);
+            color: var(--text-dark);
+            transform: rotate(45deg);
         }
 
         .faq-answer {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             background: var(--white);
         }
 
         .faq-answer.active {
-            max-height: 300px;
+            max-height: 400px;
         }
 
         .faq-answer-content {
-            padding: 25px 30px;
-            color: var(--text-light);
-            line-height: 1.7;
+            padding: 0 32px 32px;
+            color: var(--text-medium);
+            line-height: 1.8;
             font-size: 1rem;
-            font-weight: 400;
         }
 
         /* Contact Section */
         .contact {
-            padding: 100px 0;
-            background: linear-gradient(135deg, var(--text-dark) 0%, #374151 100%);
+            padding: 120px 0;
+            background: var(--secondary-gradient);
             color: var(--white);
         }
 
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+            gap: 80px;
+            align-items: start;
         }
 
         .contact h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800;
             margin-bottom: 2rem;
         }
 
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 24px;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 16px;
             font-size: 1.1rem;
-            font-weight: 400;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius-lg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(8px);
         }
 
         .contact-item i {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
+            width: 48px;
+            height: 48px;
+            background: var(--accent-gradient);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-medium);
         }
 
         .contact-form {
             background: rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
+            padding: 48px;
+            border-radius: var(--border-radius-xl);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow-large);
         }
 
         .form-group {
-            margin-bottom: 2rem;
+            margin-bottom: 24px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 1rem;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 10px;
+            padding: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius-lg);
             background: rgba(255, 255, 255, 0.9);
             font-size: 1rem;
             font-family: inherit;
             transition: all 0.3s ease;
+            color: var(--text-dark);
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             background: var(--white);
-            box-shadow: 0 0 20px rgba(30, 58, 138, 0.3);
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
         }
 
         .submit-button {
             width: 100%;
-            padding: 15px;
-            background: linear-gradient(45deg, var(--accent-color), #d97706);
+            padding: 16px;
+            background: var(--accent-gradient);
             color: var(--white);
             border: none;
-            border-radius: 10px;
+            border-radius: var(--border-radius-lg);
             font-size: 1.1rem;
-            font-weight: 600;
+            font-weight: 700;
             font-family: inherit;
             cursor: pointer;
             transition: all 0.3s ease;
+            box-shadow: var(--shadow-medium);
         }
 
         .submit-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(201, 169, 110, 0.3);
+            box-shadow: var(--shadow-large);
         }
 
         /* Footer */
         footer {
-            background: #1a1a1a;
+            background: #0a0a0a;
             color: var(--white);
             text-align: center;
-            padding: 40px 0;
-            font-weight: 400;
+            padding: 60px 0;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--white);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #9ca3af;
+            text-decoration: none;
+            line-height: 1.7;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid #1a1a1a;
+            color: #6b7280;
+        }
+
+        /* Notification Styles */
+        .notification {
+            position: fixed;
+            top: 100px;
+            right: 24px;
+            background: var(--accent-gradient);
+            color: var(--white);
+            padding: 16px 24px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-large);
+            transform: translateX(400px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 2000;
+            font-weight: 600;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .notification.success {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .notification.error {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             .floating-nav {
-                padding: 10px 0;
+                padding: 8px 12px;
                 gap: 2px;
+                top: 16px;
+                left: 16px;
+                right: 16px;
+                transform: none;
+                width: auto;
             }
 
             .floating-nav-item {
-                padding: 10px 15px;
-                font-size: 0.85rem;
+                padding: 8px 12px;
+                font-size: 0.8rem;
                 gap: 6px;
             }
 
@@ -580,16 +880,15 @@
                 display: none;
             }
 
-            .floating-nav-item .nav-icon {
-                font-size: 1.2rem;
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+                padding: 140px 0 60px;
             }
 
-            .hero {
-                padding: 100px 0 60px 0;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
+            .hero-visual {
+                order: -1;
             }
 
             .about-content,
@@ -602,34 +901,91 @@
                 grid-template-columns: 1fr;
             }
 
-            .faq-question {
-                padding: 20px;
-                font-size: 1rem;
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
             }
 
+            .cta-buttons {
+                justify-content: center;
+            }
+
+            .contact-form {
+                padding: 32px 24px;
+            }
+
+            .faq-question,
             .faq-answer-content {
-                padding: 20px;
+                padding: 24px;
+            }
+
+            .notification {
+                right: 16px;
+                left: 16px;
+                transform: translateY(-100px);
+            }
+
+            .notification.show {
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card {
+                padding: 32px 24px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-card {
+                padding: 24px;
             }
         }
 
         /* Scroll animations */
         .fade-in {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
-    /* Lazy loading images */
-        img {
-            loading: lazy;
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Reduced motion for accessibility */
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
         @media (prefers-reduced-motion: reduce) {
             * {
                 animation-duration: 0.01ms !important;
@@ -637,12 +993,28 @@
                 transition-duration: 0.01ms !important;
             }
         }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-gradient);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-gradient);
+        }
     </style>
 </head>
-<body>
-
-
-    <!-- Floating Navigation -->
+<body class="loaded">
+    <!-- Enhanced Floating Navigation -->
     <div class="floating-nav">
         <a href="#hero" class="floating-nav-item">
             <span class="nav-icon">🏠</span>
@@ -660,82 +1032,137 @@
             <span class="nav-icon">❓</span>
             <span class="nav-text">שאלות נפוצות</span>
         </a>
-        <a href="#contact" class="floating-nav-item">
+        <a href="#contact" class="floating-nav-item active">
             <span class="nav-icon">📞</span>
             <span class="nav-text">צור קשר</span>
         </a>
     </div>
 
+    <!-- Hero Section -->
     <section class="hero" id="hero">
-   <div class="container">
-       <div class="hero-content">
-           <div class="hero-logo">
-<img src="image2.jpg" alt="לוגו עו"ד משה נעמן" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="eager"/>
-           </div>
-           <h1>עו"ד משה נעמן</h1>
-           <p>עורך דין ונוטריון עם ניסיון וותק של מעל 20 שנה במערכת המשפט </p>
-           <a href="https://wa.me/972544679144" class="cta-button" target="_blank">קבע פגישת ייעוץ בווטסאפ</a>
-       </div>
-   </div>
-</section>
-
-    <section id="about" class="about">
-   <div class="container">
-       <div class="about-content">
-           <div class="about-text fade-in visible">
-               <h2>אודות עו"ד ונוטריון משה נעמן</h2>
-               <p>עורך דין ונוטריון מנוסה עם ותק של מעל 20 שנה במערכת המשפט הישראלית. המשרד מתמחה במגוון רחב של תחומי משפט, תוך מתן שירות מקצועי ואמין ללקוחותיו.</p>
-               <p>המשרד ממוקם בנווה שאנן, חיפה, ומעניק שירות אישי ומותאם לצרכי כל לקוח. עו"ד נעמן מחזיק בהסמכה כעורך דין ונוטריון וחבר לשכת עורכי הדין בישראל.</p>
-               <p>זמין לפגישות בימים א'-ו' בתיאום מראש, המשרד מספק ייעוץ ושירותים משפטיים ברמה הגבוהה ביותר תוך שמירה על יחס אישי וכבוד הלקוח.</p>
-           </div>
-           <div class="lawyer-image fade-in visible" style="width: 100%; height: 400px; overflow: hidden; border-radius: 20px;">
-    <img src="image1.jpg" alt="עו"ד ונוטריון משה נעמן" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-</div>
-       </div>
-   </div>
-</section>
-
-    <section id="services" class="services">
         <div class="container">
-            <h2 class="fade-in visible">תחומי התמחות</h2>
-            <div class="services-grid">
-                <div class="service-card fade-in visible">
-                    <div class="service-icon">📋</div>
-                    <h3>שירותי נוטריון</h3>
-                    <p>אישור חתימות, תרגום מסמכים, הכנת כתבי ויתור והסכמות, עריכת מסמכים נוטריוניים מכל הסוגים</p>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        ⭐ עורך דין ונוטריון מוסמך
+                    </div>
+                    <h1>עו"ד <span class="highlight">משה נעמן</span></h1>
+                    <p class="subtitle">שירותים משפטיים מקצועיים ואמינים עם ניסיון וותק של מעל 20 שנה במערכת המשפט הישראלית</p>
+                    <div class="cta-buttons">
+                        <a href="https://wa.me/972544679144" class="cta-button" target="_blank">
+                            📱 קבע פגישת ייעוץ בווטסאפ
+                        </a>
+                        <a href="#contact" class="cta-button secondary">
+                            📞 צור קשר טלפוני
+                        </a>
+                    </div>
                 </div>
-                <div class="service-card fade-in visible">
-                    <div class="service-icon">⚖️</div>
-                    <h3>דין פלילי</h3>
-                    <p>ייצוג בתיקים פליליים, הגנה בבתי משפט, ליווי בחקירות משטרה ומתן ייעוץ משפטי בנושאים פליליים</p>
-                </div>
-                <div class="service-card fade-in visible">
-                    <div class="service-icon">🏠</div>
-                    <h3>דיני מקרקעין</h3>
-                    <p>עסקאות קנייה ומכירה, השכרה, יעוץ במקרקעין, בדיקת מסמכים וליווי עסקאות נדל"ן</p>
-                </div>
-                <div class="service-card fade-in visible">
-                    <div class="service-icon">📜</div>
-                    <h3>ירושות וצוואות</h3>
-                    <p>כתיבה ועריכת צוואות, חלוקת עיזבון, ייעוץ בנושאי ירושה ומימוש זכויות יורשים</p>
-                </div>
-                <div class="service-card fade-in visible">
-                    <div class="service-icon">🤝</div>
-                    <h3>ייעוץ משפטי כללי</h3>
-                    <p>ייעוץ בתחומי משפט שונים, הכנת הסכמים, ליווי משפטי ומתן חוות דעת מקצועיות</p>
-                </div>
-                <div class="service-card fade-in visible">
-                    <div class="service-icon">⏰</div>
-                    <h3>זמינות גמישה</h3>
-                    <p>זמין לפגישות בימים א'-ו' בתיאום מראש, עם מתן שירות אישי ומקצועי</p>
+                
+                <div class="hero-visual">
+                    <div class="hero-card">
+                        <div class="hero-logo">
+                            <img src="image2.jpg" alt="לוגו עו" ד="" משה="" נעמן"="" loading="eager">
+                        </div>
+                        <h3>עו"ד ונוטריון משה נעמן</h3>
+                        <p>מומחה במערכת המשפט הישראלית</p>
+                        <div class="experience-badge">20+ שנות ניסיון</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Enhanced Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item animate">
+                    <div class="stat-number" data-target="20">20+</div>
+                    <div class="stat-label">שנות ניסיון</div>
+                </div>
+                <div class="stat-item animate">
+                    <div class="stat-number" data-target="500">500</div>
+                    <div class="stat-label">לקוחות מרוצים</div>
+                </div>
+                <div class="stat-item animate">
+                    <div class="stat-number" data-target="100">100%</div>
+                    <div class="stat-label">מחויבות למקצועיות</div>
+                </div>
+                <div class="stat-item animate">
+                    <div class="stat-number" data-target="24">24+</div>
+                    <div class="stat-label">זמינות לחירום</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text slide-in-left visible">
+                    <h2>אודות עו"ד ונוטריון <span class="highlight">משה נעמן</span></h2>
+                    <p>עורך דין ונוטריון מנוסה עם ותק של מעל 20 שנה במערכת המשפט הישראלית. המשרד מתמחה במגוון רחב של תחומי משפט, תוך מתן שירות מקצועי ואמין ללקוחותיו.</p>
+                    <p>המשרד ממוקם בנווה שאנן, חיפה, ומעניק שירות אישי ומותאם לצרכי כל לקוח. עו"ד נעמן מחזיק בהסמכה כעורך דין ונוטריון וחבר לשכת עורכי הדין בישראל.</p>
+                    <p>זמין לפגישות בימים א'-ו' בתיאום מראש, המשרד מספק ייעוץ ושירותים משפטיים ברמה הגבוהה ביותר תוך שמירה על יחס אישי וכבוד הלקוח.</p>
+                    
+                    <div class="credentials">
+                        <div class="credential-badge">🎓 לשכת עורכי הדין</div>
+                        <div class="credential-badge">📋 נוטריון מוסמך</div>
+                        <div class="credential-badge">⚖️ 20+ שנות ניסיון</div>
+                    </div>
+                </div>
+                <div class="lawyer-image slide-in-right visible">
+                    <img src="image1.jpg" alt="עו" ד="" ונוטריון="" משה="" נעמן"="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="fade-in visible">תחומי <span class="highlight">התמחות</span></h2>
+            <p class="section-subtitle fade-in visible">שירותים משפטיים מקצועיים ברמה הגבוהה ביותר</p>
+            <div class="services-grid">
+                <div class="service-card fade-in visible">
+                    <div class="service-icon">📋</div>
+                    <h3>שירותי נוטריון</h3>
+                    <p>אישור חתימות, תרגום מסמכים, הכנת כתבי ויתור והסכמות, עריכת מסמכים נוטריוניים מכל הסוגים בדיוק ומקצועיות</p>
+                </div>
+                <div class="service-card fade-in visible">
+                    <div class="service-icon">⚖️</div>
+                    <h3>דין פלילי</h3>
+                    <p>ייצוג מקצועי בתיקים פליליים, הגנה בבתי משפט, ליווי מלא בחקירות משטרה ומתן ייעוץ משפטי אסטרטגי</p>
+                </div>
+                <div class="service-card fade-in visible">
+                    <div class="service-icon">🏠</div>
+                    <h3>דיני מקרקעין</h3>
+                    <p>עסקאות קנייה ומכירה, השכרה, יעוץ מתקדם במקרקעין, בדיקת מסמכים וליווי מלא בעסקאות נדל"ן</p>
+                </div>
+                <div class="service-card fade-in visible">
+                    <div class="service-icon">📜</div>
+                    <h3>ירושות וצוואות</h3>
+                    <p>כתיבה ועריכת צוואות מותאמות אישית, חלוקת עיזבון, ייעוץ מעמיק בנושאי ירושה ומימוש זכויות יורשים</p>
+                </div>
+                <div class="service-card fade-in visible">
+                    <div class="service-icon">🤝</div>
+                    <h3>ייעוץ משפטי כללי</h3>
+                    <p>ייעוץ בתחומי משפט מגוונים, הכנת הסכמים מקצועיים, ליווי משפטי רציף ומתן חוות דעת מומחה</p>
+                </div>
+                <div class="service-card fade-in visible">
+                    <div class="service-icon">⏰</div>
+                    <h3>זמינות גמישה</h3>
+                    <p>זמין לפגישות בימים א'-ו' בתיאום מראש, כולל זמינות לחירום, עם מתן שירות אישי ומקצועי ללא פשרות</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
     <section class="faq" id="faq">
         <div class="container">
-            <h2 class="fade-in visible">שאלות נפוצות</h2>
+            <h2 class="fade-in visible">שאלות <span class="highlight">נפוצות</span></h2>
             <div class="faq-container">
                 <div class="faq-item fade-in visible">
                     <div class="faq-question">
@@ -800,62 +1227,137 @@
         </div>
     </section>
 
-    
-        <section class="contact" id="contact">
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
         <div class="container">
             <div class="contact-content">
-                <div class="fade-in visible">
-                    <h2>צור קשר</h2>
+                <div class="slide-in-left visible">
+                    <h2>צור <span class="highlight">קשר</span></h2>
                     <div class="contact-info">
                         <div class="contact-item">
                             <i>📞</i>
-                            <span>04-8515278</span>
+                            <div>
+                                <strong>טלפון משרד</strong><br>
+                                04-8515278
+                            </div>
                         </div>
                         <div class="contact-item">
                             <i>📱</i>
-                            <span>054-4679144</span>
+                            <div>
+                                <strong>טלפון נייד</strong><br>
+                                054-4679144
+                            </div>
                         </div>
                         <div class="contact-item">
                             <i>✉️</i>
-                            <span>naaman.office@gmail.com</span>
+                            <div>
+                                <strong>דואר אלקטרוני</strong><br>
+                                naaman.office@gmail.com
+                            </div>
                         </div>
                         <div class="contact-item">
                             <i>📍</i>
-                            <span>רח' התיכון 7א', נווה שאנן, חיפה</span>
+                            <div>
+                                <strong>כתובת</strong><br>
+                                רח' התיכון 7א', נווה שאנן, חיפה
+                            </div>
                         </div>
                         <div class="contact-item">
                             <i>🕒</i>
-                            <span>א'-ו' בתיאום מראש</span>
+                            <div>
+                                <strong>שעות פעילות</strong><br>
+                                א'-ו' בתיאום מראש
+                            </div>
                         </div>
                     </div>
                 </div>
                 
+                <div class="contact-form slide-in-right visible">
+                    <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: 700;">שלח הודעה</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">שם מלא</label>
+                            <input type="text" id="name" name="name" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">טלפון</label>
+                            <input type="tel" id="phone" name="phone" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">דואר אלקטרוני</label>
+                            <input type="email" id="email" name="email" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">נושא הפנייה</label>
+                            <input type="text" id="subject" name="subject" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">תוכן ההודעה</label>
+                            <textarea id="message" name="message" rows="5" required=""></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">שלח הודעה</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2025 עו"ד ונוטריון משה נעמן - כל הזכויות שמורות</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>עו"ד משה נעמן</h3>
+                    <p>עורך דין ונוטריון מנוסה עם מעל 20 שנות ניסיון במערכת המשפט הישראלית. מעניק שירות מקצועי ואמין בתחומי דין שונים.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>תחומי התמחות</h3>
+                    <p><a href="#services">שירותי נוטריון</a></p>
+                    <p><a href="#services">דין פלילי</a></p>
+                    <p><a href="#services">דיני מקרקעין</a></p>
+                    <p><a href="#services">ירושות וצוואות</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>יצירת קשר</h3>
+                    <p>📞 04-8515278</p>
+                    <p>📱 054-4679144</p>
+                    <p>✉️ naaman.office@gmail.com</p>
+                    <p>📍 רח' התיכון 7א', נווה שאנן, חיפה</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 עו"ד ונוטריון משה נעמן - כל הזכויות שמורות | פותח באהבה לשירות מקצועי</p>
+            </div>
         </div>
     </footer>
 
+    <!-- Quick Contact Buttons -->
+    <div style="position: fixed; bottom: 20px; left: 20px; z-index: 1500; display: flex; flex-direction: column; gap: 10px;">
+        <a href="tel:0544679144" style="width: 60px; height: 60px; background: var(--accent-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 24px; box-shadow: var(--shadow-large); transition: 0.3s; transform: scale(1);" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+            📞
+        </a>
+        <a href="https://wa.me/972544679144" target="_blank" style="width: 60px; height: 60px; background: rgb(37, 211, 102); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 24px; box-shadow: var(--shadow-large); transition: 0.3s; transform: scale(1);" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+            💬
+        </a>
+    </div>
+
     <script>
-        // Smooth scrolling for navigation links
+        // Enhanced smooth scrolling with offset for floating nav
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    const offsetTop = target.offsetTop - 100;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
                     });
                 }
             });
         });
 
-        // Scroll animations
+        // Enhanced scroll animations with Intersection Observer
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -869,59 +1371,222 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.fade-in').forEach(el => {
+        // Observe all animation elements
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
             observer.observe(el);
         });
 
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-                header.style.boxShadow = '0 5px 30px rgba(0, 0, 0, 0.15)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-            }
-        });
-
-        // FAQ Accordion functionality
-        document.querySelectorAll('.faq-question').forEach(question => {
+        // Enhanced FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach((question, index) => {
             question.addEventListener('click', function() {
                 const faqItem = this.parentElement;
                 const answer = faqItem.querySelector('.faq-answer');
                 const icon = this.querySelector('.faq-icon');
+                const isActive = answer.classList.contains('active');
                 
                 // Close all other FAQ items
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    if (item !== faqItem) {
+                document.querySelectorAll('.faq-item').forEach((item, i) => {
+                    if (i !== index) {
                         const otherAnswer = item.querySelector('.faq-answer');
                         const otherIcon = item.querySelector('.faq-icon');
-                        if (otherAnswer && otherIcon) {
+                        const otherQuestion = item.querySelector('.faq-question');
+                        if (otherAnswer && otherIcon && otherQuestion) {
                             otherAnswer.classList.remove('active');
                             otherIcon.textContent = '+';
+                            otherQuestion.classList.remove('active');
                         }
                     }
                 });
                 
                 // Toggle current FAQ item
                 if (answer && icon) {
-                    if (answer.classList.contains('active')) {
+                    if (isActive) {
                         answer.classList.remove('active');
                         icon.textContent = '+';
+                        this.classList.remove('active');
                     } else {
                         answer.classList.add('active');
-                        icon.textContent = '−';
+                        icon.textContent = '×';
+                        this.classList.add('active');
                     }
                 }
             });
+        });
+
+        // Enhanced floating navigation with active states
+        const sections = document.querySelectorAll('section[id]');
+        const navItems = document.querySelectorAll('.floating-nav-item');
+
+        function updateActiveNav() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === `#${current}`) {
+                    item.classList.add('active');
+                }
+            });
+        }
+
+        // Enhanced Stats Animation
+        function animateStats() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const statItems = document.querySelectorAll('.stat-item');
+            
+            // Add staggered animation to stat items
+            statItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add('animate');
+                }, index * 150);
+            });
+
+            // Animate numbers
+            statNumbers.forEach((stat, index) => {
+                const target = parseInt(stat.getAttribute('data-target'));
+                const suffix = index === 2 ? '%' : (index === 0 || index === 3) && target < 100 ? '+' : '';
+                let current = 0;
+                const increment = target / 60; // 60 frames for 1 second at 60fps
+                const duration = 2000; // 2 seconds
+                const stepTime = duration / 60;
+
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        stat.textContent = target + suffix;
+                        clearInterval(timer);
+                    } else {
+                        stat.textContent = Math.floor(current) + suffix;
+                    }
+                }, stepTime);
+            });
+        }
+
+        // Stats observer
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.stats');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Notification System
+        function showNotification(message, type = 'success') {
+            const existingNotifications = document.querySelectorAll('.notification');
+            existingNotifications.forEach(notification => notification.remove());
+
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 100);
+
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 5000);
+        }
+
+        // Enhanced contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            if (!data.name || !data.phone || !data.email || !data.subject || !data.message) {
+                showNotification('אנא מלא את כל השדות הנדרשים', 'error');
+                return;
+            }
+
+            const button = this.querySelector('.submit-button');
+            const originalText = button.textContent;
+            button.textContent = 'שולח הודעה...';
+            button.disabled = true;
+
+            // Create email content
+            const emailSubject = `פנייה חדשה מהאתר: ${data.subject}`;
+            const emailBody = `שלום עו"ד נעמן,
+
+קיבלת פנייה חדשה מהאתר:
+
+פרטי הפונה:
+שם: ${data.name}
+טלפון: ${data.phone}
+דואר אלקטרוני: ${data.email}
+
+נושא הפנייה: ${data.subject}
+
+תוכן ההודעה:
+${data.message}
+
+בברכה,
+מערכת האתר`;
+
+            // Create WhatsApp message
+            const whatsappMessage = `שלום עו"ד נעמן,
+
+פנייה חדשה מהאתר:
+
+📝 שם: ${data.name}
+📞 טלפון: ${data.phone}
+📧 דואר: ${data.email}
+🏷️ נושא: ${data.subject}
+
+💬 הודעה:
+${data.message}`;
+
+            const mailtoLink = `mailto:naaman.office@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+            const whatsappLink = `https://wa.me/972544679144?text=${encodeURIComponent(whatsappMessage)}`;
+
+            try {
+                window.open(mailtoLink, '_blank');
+                
+                setTimeout(() => {
+                    showNotification('ההודעה נשלחה בהצלחה! אם לא נפתח הדואר האלקטרוני, תוכל לשלוח בווטסאפ', 'success');
+                    
+                    setTimeout(() => {
+                        if (confirm('האם תרצה לשלוח את ההודעה גם בווטסאפ?')) {
+                            window.open(whatsappLink, '_blank');
+                        }
+                    }, 2000);
+                }, 500);
+
+            } catch (error) {
+                window.open(whatsappLink, '_blank');
+                showNotification('ההודעה נשלחה בווטסאפ!', 'success');
+            }
+
+            this.reset();
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.disabled = false;
+            }, 1000);
         });
 
         // Performance optimizations
         let ticking = false;
         
         function updateOnScroll() {
-            // Add any scroll-based updates here
+            updateActiveNav();
             ticking = false;
         }
         
@@ -934,13 +1599,32 @@
         
         window.addEventListener('scroll', requestTick);
         
-        // Preload critical images
-        const preloadImages = ['image1.jpg', 'image2.jpg'];
-        preloadImages.forEach(src => {
-            const img = new Image();
-            img.src = src;
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('loaded');
+            
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+                    if (el.getBoundingClientRect().top < window.innerHeight) {
+                        el.classList.add('visible');
+                    }
+                });
+            }, 100);
+        });
+
+        // Enhanced keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.faq-answer.active').forEach(answer => {
+                    answer.classList.remove('active');
+                    const question = answer.parentElement.querySelector('.faq-question');
+                    const icon = question.querySelector('.faq-icon');
+                    question.classList.remove('active');
+                    icon.textContent = '+';
+                });
+            }
         });
     </script>
 
-</body>
-</html>
+
+</body></html>
