@@ -534,384 +534,214 @@
         }
 
         /* FAQ Section */
-        /* FAQ Section - Mobile Optimized */
-        .faq {
         .faq {
             padding: 120px 0;
-            padding: 80px 0;
-            background: var(--light-bg);
             background: var(--light-bg);
         }
-        }
+
         .faq h2 {
-        .faq h2 {
-            text-align: center;
             text-align: center;
             font-size: clamp(2rem, 4vw, 2.8rem);
-            font-size: clamp(1.8rem, 6vw, 2.4rem);
-            font-weight: 800;
             font-weight: 800;
             margin-bottom: 4rem;
-            margin-bottom: 3rem;
-            color: var(--text-dark);
             color: var(--text-dark);
         }
-        }
-        .faq-container {
+
         .faq-container {
             max-width: 900px;
-            max-width: 100%;
-            margin: 0 auto;
             margin: 0 auto;
         }
-        }
-        .faq-item {
+
         .faq-item {
             margin-bottom: 24px;
-            margin-bottom: 16px;
-            border: 1px solid var(--border-light);
             border: 1px solid var(--border-light);
             border-radius: var(--border-radius-lg);
-            border-radius: var(--border-radius-md);
-            overflow: hidden;
             overflow: hidden;
             background: var(--white);
-            background: var(--white);
-            box-shadow: var(--shadow-soft);
             box-shadow: var(--shadow-soft);
             transition: all 0.3s ease;
-            transition: all 0.3s ease;
         }
-        }
-        .faq-item:hover {
+
         .faq-item:hover {
             box-shadow: var(--shadow-medium);
-            box-shadow: var(--shadow-medium);
-            border-color: var(--border-medium);
             border-color: var(--border-medium);
         }
-        }
-        .faq-question {
+
         .faq-question {
             padding: 32px;
-            padding: 20px;
-            cursor: pointer;
             cursor: pointer;
             display: flex;
-            display: flex;
-            justify-content: space-between;
             justify-content: space-between;
             align-items: center;
-            align-items: center;
-            font-weight: 700;
             font-weight: 700;
             font-size: 1.1rem;
-            font-size: 1rem;
-            color: var(--text-dark);
             color: var(--text-dark);
             transition: all 0.3s ease;
-            transition: all 0.3s ease;
             background: var(--white);
-            background: var(--white);
-            text-align: right;
         }
-        }
-        .faq-question:hover {
+
         .faq-question:hover {
             background: var(--light-bg);
-            background: var(--light-bg);
         }
-        }
-        .faq-question.active {
+
         .faq-question.active {
             background: var(--secondary-gradient);
-            background: var(--secondary-gradient);
-            color: var(--white);
             color: var(--white);
         }
-        }
-        .faq-icon {
+
         .faq-icon {
             width: 32px;
-            width: 28px;
             height: 32px;
-            height: 28px;
-            border-radius: 50%;
             border-radius: 50%;
             background: var(--secondary-gradient);
-            background: var(--secondary-gradient);
-            display: flex;
             display: flex;
             align-items: center;
-            align-items: center;
             justify-content: center;
-            justify-content: center;
-            color: var(--white);
             color: var(--white);
             font-size: 1.2rem;
-            font-size: 1.1rem;
-            font-weight: 700;
             font-weight: 700;
             transition: all 0.3s ease;
-            transition: all 0.3s ease;
-            flex-shrink: 0;
-            margin-left: 12px;
         }
-        }
-        .faq-question.active .faq-icon {
+
         .faq-question.active .faq-icon {
             background: var(--white);
-            background: var(--white);
-            color: var(--text-dark);
             color: var(--text-dark);
             transform: rotate(45deg);
-            transform: rotate(45deg);
         }
-        }
-        .faq-answer {
+
         .faq-answer {
             max-height: 0;
-            max-height: 0;
-            overflow: hidden;
             overflow: hidden;
             transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            transition: max-height 0.4s ease;
-            background: var(--white);
             background: var(--white);
         }
-        }
-        .faq-answer.active {
+
         .faq-answer.active {
             max-height: 400px;
-            max-height: 500px;
         }
-        }
-        .faq-answer-content {
+
         .faq-answer-content {
             padding: 0 32px 32px;
-            padding: 0 20px 20px;
-            color: var(--text-medium);
             color: var(--text-medium);
             line-height: 1.8;
-            line-height: 1.7;
             font-size: 1rem;
-            font-size: 0.95rem;
-            text-align: right;
         }
-        }
+
         /* Contact Section */
-        /* Contact Section - Mobile Stack */
-        .contact {
         .contact {
             padding: 120px 0;
-            padding: 80px 0;
-            background: var(--secondary-gradient);
             background: var(--secondary-gradient);
             color: var(--white);
-            color: var(--white);
         }
-        }
-        .contact-content {
+
         .contact-content {
             display: grid;
-            display: flex;
             grid-template-columns: 1fr 1fr;
-            flex-direction: column;
             gap: 80px;
-            gap: 40px;
             align-items: start;
-            align-items: stretch;
         }
-        }
-        .contact h2 {
+
         .contact h2 {
             font-size: clamp(2rem, 4vw, 2.8rem);
-            font-size: clamp(1.8rem, 6vw, 2.4rem);
-            font-weight: 800;
             font-weight: 800;
             margin-bottom: 2rem;
-            margin-bottom: 2rem;
-            text-align: center;
         }
-        }
-        .contact-info {
+
         .contact-info {
             display: flex;
-            display: flex;
-            flex-direction: column;
             flex-direction: column;
             gap: 24px;
-            gap: 16px;
         }
-        }
-        .contact-item {
+
         .contact-item {
             display: flex;
-            display: flex;
             align-items: center;
-            align-items: center;
-            gap: 16px;
             gap: 16px;
             font-size: 1.1rem;
-            font-size: 1rem;
             padding: 16px;
-            padding: 16px;
-            background: rgba(255, 255, 255, 0.1);
             background: rgba(255, 255, 255, 0.1);
             border-radius: var(--border-radius-lg);
-            border-radius: var(--border-radius-md);
-            backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
             transition: all 0.3s ease;
         }
-        }
+
         .contact-item:hover {
-        .contact-item:hover {
-            background: rgba(255, 255, 255, 0.15);
             background: rgba(255, 255, 255, 0.15);
             transform: translateX(8px);
-            transform: translateX(4px);
         }
-        }
-        .contact-item i {
+
         .contact-item i {
             width: 48px;
-            width: 40px;
             height: 48px;
-            height: 40px;
-            background: var(--accent-gradient);
             background: var(--accent-gradient);
             border-radius: 50%;
-            border-radius: 50%;
-            display: flex;
             display: flex;
             align-items: center;
-            align-items: center;
-            justify-content: center;
             justify-content: center;
             font-size: 1.2rem;
-            font-size: 1.1rem;
             box-shadow: var(--shadow-medium);
-            box-shadow: var(--shadow-medium);
-            flex-shrink: 0;
         }
-        }
+
         .contact-form {
-        .contact-form {
-            background: rgba(255, 255, 255, 0.1);
             background: rgba(255, 255, 255, 0.1);
             padding: 48px;
-            padding: 32px 24px;
             border-radius: var(--border-radius-xl);
-            border-radius: var(--border-radius-lg);
-            backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: var(--shadow-large);
             box-shadow: var(--shadow-large);
         }
-        }
-        .contact-form h3 {
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-            font-weight: 700;
-            text-align: center;
-        }
-        .form-group {
+
         .form-group {
             margin-bottom: 24px;
-            margin-bottom: 20px;
         }
-        }
+
         .form-group label {
-        .form-group label {
-            display: block;
             display: block;
             margin-bottom: 8px;
-            margin-bottom: 6px;
-            font-weight: 600;
             font-weight: 600;
             font-size: 1rem;
-            font-size: 0.95rem;
         }
-        }
-        .form-group input,
+
         .form-group input,
         .form-group textarea {
-        .form-group textarea {
-            width: 100%;
             width: 100%;
             padding: 16px;
-            padding: 14px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
             border: 2px solid rgba(255, 255, 255, 0.2);
             border-radius: var(--border-radius-lg);
-            border-radius: var(--border-radius-md);
-            background: rgba(255, 255, 255, 0.9);
             background: rgba(255, 255, 255, 0.9);
             font-size: 1rem;
-            font-size: 1rem;
-            font-family: inherit;
             font-family: inherit;
             transition: all 0.3s ease;
-            transition: all 0.3s ease;
-            color: var(--text-dark);
             color: var(--text-dark);
         }
-        }
-        .form-group input:focus,
+
         .form-group input:focus,
         .form-group textarea:focus {
-        .form-group textarea:focus {
-            outline: none;
             outline: none;
             background: var(--white);
-            background: var(--white);
-            border-color: var(--accent-color);
             border-color: var(--accent-color);
             box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
-            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
         }
-        }
-        .submit-button {
+
         .submit-button {
             width: 100%;
-            width: 100%;
-            padding: 16px;
             padding: 16px;
             background: var(--accent-gradient);
-            background: var(--accent-gradient);
             color: var(--white);
-            color: var(--white);
-            border: none;
             border: none;
             border-radius: var(--border-radius-lg);
-            border-radius: var(--border-radius-md);
-            font-size: 1.1rem;
             font-size: 1.1rem;
             font-weight: 700;
-            font-weight: 700;
-            font-family: inherit;
             font-family: inherit;
             cursor: pointer;
-            cursor: pointer;
-            transition: all 0.3s ease;
             transition: all 0.3s ease;
             box-shadow: var(--shadow-medium);
-            box-shadow: var(--shadow-medium);
         }
-        }
-        .submit-button:hover {
+
         .submit-button:hover {
             transform: translateY(-2px);
-            transform: translateY(-2px);
             box-shadow: var(--shadow-large);
-            box-shadow: var(--shadow-large);
-        }
         }
 
 
