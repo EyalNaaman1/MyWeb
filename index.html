@@ -646,7 +646,7 @@
 
         .contact-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 80px;
             align-items: start;
         }
@@ -693,7 +693,9 @@
             box-shadow: var(--shadow-medium);
         }
 
+        /* הסתרת הטופס במכשירים ניידים */
         .contact-form {
+            display: none; /* מוסתר כברירת מחדל במובייל */
             background: rgba(255, 255, 255, 0.1);
             padding: 48px;
             border-radius: var(--border-radius-xl);
@@ -754,6 +756,59 @@
             box-shadow: var(--shadow-large);
         }
 
+        /* הודעה להנחיה במובייל */
+        .mobile-contact-message {
+            display: block;
+            background: rgba(212, 175, 55, 0.15);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: var(--border-radius-lg);
+            padding: 24px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .mobile-contact-message h3 {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .mobile-contact-message p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .mobile-contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .mobile-contact-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 20px;
+            background: var(--accent-gradient);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .mobile-contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .mobile-contact-btn.whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+        }
 
         /* Footer - Mobile Optimized */
         footer {
@@ -966,13 +1021,18 @@
             }
 
             .contact-content {
-                flex-direction: row;
+                grid-template-columns: 1fr 1fr;
                 gap: 60px;
             }
 
-            .contact-info,
+            /* הצגת הטופס רק בטאבלט ומעלה */
             .contact-form {
-                flex: 1;
+                display: block;
+            }
+
+            /* הסתרת ההודעה למובייל בטאבלט ומעלה */
+            .mobile-contact-message {
+                display: none;
             }
 
             .footer-content {
@@ -1084,563 +1144,3 @@
             outline: 2px solid var(--accent-color);
             outline-offset: 2px;
         }
-    </style>
-</head>
-<body>
-    <!-- Enhanced Mobile Navigation -->
-    <nav class="floating-nav">
-        <a href="#hero" class="floating-nav-item active">
-            <span class="nav-icon">🏠</span>
-            <span class="nav-text">דף בית</span>
-        </a>
-        <a href="#about" class="floating-nav-item">
-            <span class="nav-icon">👤</span>
-            <span class="nav-text">אודות</span>
-        </a>
-        <a href="#services" class="floating-nav-item">
-            <span class="nav-icon">⚖️</span>
-            <span class="nav-text">תחומי התמחות</span>
-        </a>
-        <a href="#faq" class="floating-nav-item">
-            <span class="nav-icon">❓</span>
-            <span class="nav-text">שאלות נפוצות</span>
-        </a>
-        <a href="#contact" class="floating-nav-item">
-            <span class="nav-icon">📞</span>
-            <span class="nav-text">צור קשר</span>
-        </a>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-visual">
-                    <div class="hero-card">
-                        <div class="hero-logo">
-                            <img src="image2.jpg" alt="לוגו עו"ד משה נעמן" loading="eager">
-                        </div>
-                        <h3>עו"ד ונוטריון משה נעמן</h3>
-                        <p>מומחה במערכת המשפט הישראלית</p>
-                        <div class="experience-badge">20+ שנות ניסיון</div>
-                    </div>
-                </div>
-                
-                <div class="hero-text">
-                    <div class="hero-badge">
-                        ⭐ עורך דין ונוטריון מוסמך
-                    </div>
-                    <h1>עו"ד <span class="highlight">משה נעמן</span></h1>
-                    <p class="subtitle">שירותים משפטיים מקצועיים ואמינים עם ניסיון וותק של מעל 20 שנה במערכת המשפט הישראלית</p>
-                    <div class="cta-buttons">
-                        <a href="https://wa.me/972544679144" class="cta-button" target="_blank" rel="noopener">
-                            📱 קבע פגישת ייעוץ בווטסאפ
-                        </a>
-                        <a href="#contact" class="cta-button secondary">
-                            📞 צור קשר טלפוני
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text slide-in-left">
-                    <h2>אודות עו"ד ונוטריון <span class="highlight">משה נעמן</span></h2>
-                    <p>עורך דין ונוטריון מנוסה עם ותק של מעל 20 שנה במערכת המשפט הישראלית. המשרד מתמחה במגוון רחב של תחומי משפט, תוך מתן שירות מקצועי ואמין ללקוחותיו.</p>
-                    <p>המשרד ממוקם בנווה שאנן, חיפה, ומעניק שירות אישי ומותאם לצרכי כל לקוח. עו"ד נעמן מחזיק בהסמכה כעורך דין ונוטריון וחבר לשכת עורכי הדין בישראל.</p>
-                    <p>זמין לפגישות בימים א'-ו' בתיאום מראש, המשרד מספק ייעוץ ושירותים משפטיים ברמה הגבוהה ביותר תוך שמירה על יחס אישי וכבוד הלקוח.</p>
-                    
-                    <div class="credentials">
-                        <div class="credential-badge">🎓 לשכת עורכי הדין</div>
-                        <div class="credential-badge">📋 נוטריון מוסמך</div>
-                        <div class="credential-badge">⚖️ 20+ שנות ניסיון</div>
-                    </div>
-                </div>
-                <div class="lawyer-image slide-in-right">
-                    <img src="image1.jpg" alt="עו"ד ונוטריון משה נעמן" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="fade-in">תחומי <span class="highlight">התמחות</span></h2>
-            <p class="section-subtitle fade-in">שירותים משפטיים מקצועיים ברמה הגבוהה ביותר</p>
-            <div class="services-grid">
-                <article class="service-card fade-in">
-                    <div class="service-icon" aria-hidden="true">📋</div>
-                    <h3>שירותי נוטריון</h3>
-                    <p>אישור חתימות, תרגום מסמכים, הכנת כתבי ויתור והסכמות, עריכת מסמכים נוטריוניים מכל הסוגים בדיוק ומקצועיות</p>
-                </article>
-                <article class="service-card fade-in">
-                    <div class="service-icon" aria-hidden="true">⚖️</div>
-                    <h3>דין פלילי</h3>
-                    <p>ייצוג מקצועי בתיקים פליליים, הגנה בבתי משפט, ליווי מלא בחקירות משטרה ומתן ייעוץ משפטי אסטרטגי</p>
-                </article>
-                <article class="service-card fade-in">
-                    <div class="service-icon" aria-hidden="true">🏠</div>
-                    <h3>דיני מקרקעין</h3>
-                    <p>עסקאות קנייה ומכירה, השכרה, יעוץ מתקדם במקרקעין, בדיקת מסמכים וליווי מלא בעסקאות נדל"ן</p>
-                </article>
-                <article class="service-card fade-in">
-                    <div class="service-icon" aria-hidden="true">📜</div>
-                    <h3>ירושות וצוואות</h3>
-                    <p>כתיבה ועריכת צוואות מותאמות אישית, חלוקת עיזבון, ייעוץ מעמיק בנושאי ירושה ומימוש זכויות יורשים</p>
-                </article>
-                <article class="service-card fade-in">
-                    <div class="service-icon" aria-hidden="true">🤝</div>
-                    <h3>ייעוץ משפטי כללי</h3>
-                    <p>ייעוץ בתחומי משפט מגוונים, הכנת הסכמים מקצועיים, ליווי משפטי רציף ומתן חוות דעת מומחה</p>
-                </article>
-                <article class="service-card fade-in">
-                    <div class="service-icon" aria-hidden="true">⏰</div>
-                    <h3>זמינות גמישה</h3>
-                    <p>זמין לפגישות בימים א'-ו' בתיאום מראש, כולל זמינות לחירום, עם מתן שירות אישי ומקצועי ללא פשרות</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq" id="faq">
-        <div class="container">
-            <h2 class="fade-in">שאלות <span class="highlight">נפוצות</span></h2>
-            <div class="faq-container">
-                <article class="faq-item fade-in">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>מה כוללים שירותי הנוטריון?</span>
-                        <div class="faq-icon" aria-hidden="true">+</div>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            שירותי הנוטריון כוללים אישור חתימות על מסמכים שונים, תרגום מסמכים מוסמך, הכנת כתבי ויתור והסכמות, עריכת מסמכים נוטריוניים לצרכי בנקאות, ביטוח ועסקאות. כמו כן, אני מעניק שירותי נוטריון למסמכים הנדרשים לצרכי הגירה, לימודים בחו"ל ועסקאות בינלאומיות.
-                        </div>
-                    </div>
-                </article>
-                
-                <article class="faq-item fade-in">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>איך מתנהל ליווי בתיק פלילי?</span>
-                        <div class="faq-icon" aria-hidden="true">+</div>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            הליווי בתיק פלילי מתחיל מהייעוץ הראשוני וכולל ליווי בחקירות משטרה, הכנת קו ההגנה, איסוף ראיות ועדויות, ניהול משא ומתן עם הפרקליטות, ייצוג בכל דיונים בבית המשפט ובמידת הצורך - ליווי עד לערעור. אני נותן דגש על הסברת התהליך ללקוח ועדכון שוטף.
-                        </div>
-                    </div>
-                </article>
-
-                <article class="faq-item fade-in">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>מה כולל ליווי בעסקת מקרקעין?</span>
-                        <div class="faq-icon" aria-hidden="true">+</div>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            הליווי כולל בדיקת מסמכי הנכס, בדיקת זכויות ועיקולים, הכנת הסכמי קנייה או השכרה, ליווי התהליך מול הבנק והמוסדות הרלוונטיים, השתתפות בחתימה אצל הנוטריון והבטחת העברת הכספים והמסמכים כדין. המטרה היא להבטיח עסקה בטוחה ותקינה.
-                        </div>
-                    </div>
-                </article>
-
-                <article class="faq-item fade-in">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>איך מתנהל תהליך פרובציה וחלוקת עיזבון?</span>
-                        <div class="faq-icon" aria-hidden="true">+</div>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            התהליך מתחיל בהגשת בקשה לפרובט או צו ירושה, איסוף כל המסמכים הנדרשים, פרסום הודעות כחוק, הכנת פנקס אינוונטר, תיאום בין היורשים, חלוקת הנכסים לפי הצוואה או החוק, וטיפול בהיבטי מס ירושה. הליך מורכב הדורש ליווי מקצועי מתחילתו ועד סופו.
-                        </div>
-                    </div>
-                </article>
-
-                <article class="faq-item fade-in">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>מה עלות הייעוץ וכמה זמן לוקח לקבוע פגישה?</span>
-                        <div class="faq-icon" aria-hidden="true">+</div>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            עלות הייעוץ נקבעת לפי מורכבות התיק וסוג השירות הנדרש. אני נותן הערכה ראשונית כבר בשיחת הטלפון הראשונה. פגישה ניתן לקבוע בדרך כלל תוך 1-2 ימי עבודה, ובמקרים דחופים - גם באותו יום. אני זמין לפגישות בימים א'-ו' לפי תיאום מראש.
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="contact-content">
-                <div class="slide-in-left">
-                    <h2>צור <span class="highlight">קשר</span></h2>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <i aria-hidden="true">📞</i>
-                            <div>
-                                <strong>טלפון משרד</strong><br>
-                                <a href="tel:048515278">04-8515278</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i aria-hidden="true">📱</i>
-                            <div>
-                                <strong>טלפון נייד</strong><br>
-                                <a href="tel:0544679144">054-4679144</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i aria-hidden="true">✉️</i>
-                            <div>
-                                <strong>דואר אלקטרוני</strong><br>
-                                <a href="mailto:naaman.office@gmail.com">naaman.office@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i aria-hidden="true">📍</i>
-                            <div>
-                                <strong>כתובת</strong><br>
-                                רח' התיכון 7א', נווה שאנן, חיפה
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i aria-hidden="true">🕒</i>
-                            <div>
-                                <strong>שעות פעילות</strong><br>
-                                א'-ו' בתיאום מראש
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <form class="contact-form slide-in-right" id="contactForm">
-                    <h3>שלח הודעה</h3>
-                    <div class="form-group">
-                        <label for="name">שם מלא *</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">טלפון *</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">דואר אלקטרוני *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">נושא הפנייה *</label>
-                        <input type="text" id="subject" name="subject" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">תוכן ההודעה *</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-button">שלח הודעה</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>עו"ד משה נעמן</h3>
-                    <p>עורך דין ונוטריון מנוסה עם מעל 20 שנות ניסיון במערכת המשפט הישראלית. מעניק שירות מקצועי ואמין בתחומי דין שונים.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>תחומי התמחות</h3>
-                    <p><a href="#services">שירותי נוטריון</a></p>
-                    <p><a href="#services">דין פלילי</a></p>
-                    <p><a href="#services">דיני מקרקעין</a></p>
-                    <p><a href="#services">ירושות וצוואות</a></p>
-                </div>
-                <div class="footer-section">
-                    <h3>יצירת קשר</h3>
-                    <p><a href="tel:048515278">📞 04-8515278</a></p>
-                    <p><a href="tel:0544679144">📱 054-4679144</a></p>
-                    <p><a href="mailto:naaman.office@gmail.com">✉️ naaman.office@gmail.com</a></p>
-                    <p>📍 רח' התיכון 7א', נווה שאנן, חיפה</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2025 עו"ד ונוטריון משה נעמן - כל הזכויות שמורות</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Quick Contact Buttons -->
-    <div class="quick-contact">
-        <a href="tel:0544679144" class="quick-contact-btn phone" aria-label="התקשר לעו"ד נעמן">
-            📞
-        </a>
-        <a href="https://wa.me/972544679144" class="quick-contact-btn whatsapp" target="_blank" rel="noopener" aria-label="שלח הודעה בווטסאפ לעו"ד נעמן">
-            💬
-        </a>
-    </div>
-
-    <script>
-        // Enhanced smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offsetTop = target.offsetTop - 80;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Enhanced FAQ functionality
-        document.querySelectorAll('.faq-question').forEach((question) => {
-            question.addEventListener('click', function() {
-                const faqItem = this.parentElement;
-                const answer = faqItem.querySelector('.faq-answer');
-                const icon = this.querySelector('.faq-icon');
-                const isActive = answer.classList.contains('active');
-                
-                // Close all other FAQ items
-                document.querySelectorAll('.faq-item').forEach((item) => {
-                    if (item !== faqItem) {
-                        const otherAnswer = item.querySelector('.faq-answer');
-                        const otherIcon = item.querySelector('.faq-icon');
-                        const otherQuestion = item.querySelector('.faq-question');
-                        if (otherAnswer && otherIcon && otherQuestion) {
-                            otherAnswer.classList.remove('active');
-                            otherIcon.textContent = '+';
-                            otherQuestion.classList.remove('active');
-                            otherQuestion.setAttribute('aria-expanded', 'false');
-                        }
-                    }
-                });
-                
-                // Toggle current FAQ item
-                if (isActive) {
-                    answer.classList.remove('active');
-                    icon.textContent = '+';
-                    this.classList.remove('active');
-                    this.setAttribute('aria-expanded', 'false');
-                } else {
-                    answer.classList.add('active');
-                    icon.textContent = '×';
-                    this.classList.add('active');
-                    this.setAttribute('aria-expanded', 'true');
-                }
-            });
-        });
-
-        // Navigation active state
-        const sections = document.querySelectorAll('section[id]');
-        const navItems = document.querySelectorAll('.floating-nav-item');
-
-        function updateActiveNav() {
-            let current = '';
-            const scrollPos = window.scrollY + 120;
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navItems.forEach(item => {
-                item.classList.remove('active');
-                if (item.getAttribute('href') === `#${current}`) {
-                    item.classList.add('active');
-                }
-            });
-        }
-
-        // Notification system
-        function showNotification(message, type = 'success') {
-            const existingNotifications = document.querySelectorAll('.notification');
-            existingNotifications.forEach(notification => notification.remove());
-
-            const notification = document.createElement('div');
-            notification.className = `notification ${type}`;
-            notification.textContent = message;
-            notification.setAttribute('role', 'alert');
-            document.body.appendChild(notification);
-
-            setTimeout(() => notification.classList.add('show'), 100);
-            setTimeout(() => {
-                notification.classList.remove('show');
-                setTimeout(() => notification.remove(), 300);
-            }, 5000);
-        }
-
-        // Contact form handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            if (!data.name || !data.phone || !data.email || !data.subject || !data.message) {
-                showNotification('אנא מלא את כל השדות הנדרשים', 'error');
-                return;
-            }
-
-            const button = this.querySelector('.submit-button');
-            const originalText = button.textContent;
-            button.textContent = 'שולח הודעה...';
-            button.disabled = true;
-
-            const emailSubject = `פנייה חדשה מהאתר: ${data.subject}`;
-            const emailBody = `שלום עו"ד נעמן,
-
-קיבלת פנייה חדשה מהאתר:
-
-פרטי הפונה:
-שם: ${data.name}
-טלפון: ${data.phone}
-דואר אלקטרוני: ${data.email}
-
-נושא הפנייה: ${data.subject}
-
-תוכן ההודעה:
-${data.message}
-
-בברכה,
-מערכת האתר`;
-
-            const whatsappMessage = `שלום עו"ד נעמן,
-
-פנייה חדשה מהאתר:
-
-📝 שם: ${data.name}
-📞 טלפון: ${data.phone}
-📧 דואר: ${data.email}
-🏷️ נושא: ${data.subject}
-
-💬 הודעה:
-${data.message}`;
-
-            const mailtoLink = `mailto:naaman.office@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
-            const whatsappLink = `https://wa.me/972544679144?text=${encodeURIComponent(whatsappMessage)}`;
-
-            try {
-                window.open(mailtoLink, '_blank');
-                showNotification('ההודעה נשלחה בהצלחה!', 'success');
-                
-                setTimeout(() => {
-                    if (confirm('האם תרצה לשלוח את ההודעה גם בווטסאפ?')) {
-                        window.open(whatsappLink, '_blank');
-                    }
-                }, 2000);
-
-            } catch (error) {
-                window.open(whatsappLink, '_blank');
-                showNotification('ההודעה נשלחה בווטסאפ!', 'success');
-            }
-
-            this.reset();
-            setTimeout(() => {
-                button.textContent = originalText;
-                button.disabled = false;
-            }, 1000);
-        });
-
-        // Optimized scroll handling
-        let ticking = false;
-        
-        function handleScroll() {
-            updateActiveNav();
-            ticking = false;
-        }
-        
-        function requestTick() {
-            if (!ticking) {
-                requestAnimationFrame(handleScroll);
-                ticking = true;
-            }
-        }
-        
-        window.addEventListener('scroll', requestTick, { passive: true });
-        
-        // Initialize on load
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initial animation trigger
-            setTimeout(() => {
-                document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
-                    if (el.getBoundingClientRect().top < window.innerHeight) {
-                        el.classList.add('visible');
-                    }
-                });
-            }, 100);
-            
-            // Initial nav state
-            updateActiveNav();
-        });
-
-        // Keyboard navigation for FAQ
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                document.querySelectorAll('.faq-answer.active').forEach(answer => {
-                    answer.classList.remove('active');
-                    const question = answer.parentElement.querySelector('.faq-question');
-                    const icon = question.querySelector('.faq-icon');
-                    question.classList.remove('active');
-                    question.setAttribute('aria-expanded', 'false');
-                    icon.textContent = '+';
-                });
-            }
-        });
-
-        // Touch-friendly enhancements
-        if ('ontouchstart' in window) {
-            document.body.classList.add('touch-device');
-        }
-
-        // Prevent zoom on input focus (iOS)
-        document.querySelectorAll('input, textarea').forEach(input => {
-            input.addEventListener('focus', function() {
-                if (window.innerWidth < 768) {
-                    const viewport = document.querySelector('meta[name=viewport]');
-                    viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
-                }
-            });
-            
-            input.addEventListener('blur', function() {
-                if (window.innerWidth < 768) {
-                    const viewport = document.querySelector('meta[name=viewport]');
-                    viewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
-                }
-            });
-        });
-    </script>
-</body>
-</html>
