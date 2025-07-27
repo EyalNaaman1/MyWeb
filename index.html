@@ -60,50 +60,45 @@
             padding: 0 20px;
         }
 
-        /* Enhanced Mobile-First Navigation */
+        /* Floating Navigation Bar */
         .floating-nav {
             position: fixed;
-            top: 12px;
-            left: 12px;
-            right: 12px;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 1000;
             background: rgba(26, 26, 26, 0.95);
             backdrop-filter: blur(20px);
-            padding: 8px;
-            border-radius: 16px;
+            padding: 12px 20px;
+            border-radius: 50px;
             box-shadow: var(--shadow-luxury);
             display: flex;
-            justify-content: space-between;
+            gap: 5px;
             transition: all 0.3s ease;
             border: 1px solid rgba(212, 175, 55, 0.2);
-            max-width: 100%;
-            overflow-x: auto;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
         }
 
-        .floating-nav::-webkit-scrollbar {
-            display: none;
+        .floating-nav:hover {
+            background: rgba(26, 26, 26, 0.98);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.35);
+            border-color: rgba(212, 175, 55, 0.4);
         }
 
         .floating-nav-item {
-            padding: 10px 12px;
-            border-radius: 12px;
+            padding: 10px 20px;
+            border-radius: 25px;
             background: transparent;
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 6px;
+            gap: 8px;
             color: var(--white);
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 600;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
             white-space: nowrap;
-            min-width: 48px;
-            flex-shrink: 0;
         }
 
         .floating-nav-item::before {
