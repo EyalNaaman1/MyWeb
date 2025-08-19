@@ -178,115 +178,63 @@
         }
 
         
-/* Hero Card - גרסה מוגדלת ומשופרת */
-.hero-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: var(--border-radius-lg);
-    padding: 32px 24px; /* הגדלת padding */
-    text-align: center;
-    box-shadow: var(--shadow-medium);
-    position: relative;
-    overflow: hidden;
-    max-width: 380px; /* הגדלה מ-280px ל-380px */
-    width: 100%; /* שימוש מלא ברוחב הזמין */
-    margin: 0 auto;
-    min-height: 240px; /* הוספת גובה מינימלי */
-}
-
-.hero-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--accent-gradient);
-}
-
-.hero-logo {
-    width: 100px; /* הגדלה מ-80px ל-100px */
-    height: 100px; /* הגדלה מ-80px ל-100px */
-    overflow: hidden;
-    border-radius: 50%;
-    margin: 0 auto 20px; /* הגדלת הרווח התחתון */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    border: 3px solid rgba(212, 175, 55, 0.3);
-}
-
-.hero-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.hero-card h3 {
-    font-size: 1.4rem; /* הגדלה מ-1.2rem ל-1.4rem */
-    font-weight: 700;
-    margin-bottom: 8px; /* הגדלת הרווח */
-    color: var(--white);
-    line-height: 1.3;
-}
-
-.hero-card p {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1rem; /* הגדלה מ-0.9rem ל-1rem */
-    margin-bottom: 20px; /* הגדלת הרווח */
-    line-height: 1.5;
-}
-
-.experience-badge {
-    background: var(--accent-gradient);
-    color: var(--white);
-    padding: 8px 16px; /* הגדלת padding */
-    border-radius: 25px; /* הגדלת border-radius */
-    font-size: 0.9rem; /* הגדלה מ-0.8rem ל-0.9rem */
-    font-weight: 700;
-    display: inline-block;
-    letter-spacing: 0.5px;
-}
-
-/* עבור מסכים קטנים יותר */
-@media (max-width: 480px) {
-    .hero-card {
-        max-width: 320px;
-        padding: 28px 20px;
-        margin: 0 16px;
-    }
-    
-    .hero-logo {
-        width: 90px;
-        height: 90px;
-    }
-    
-    .hero-card h3 {
-        font-size: 1.3rem;
-    }
-}
-
-/* עבור מסכים גדולים יותר */
-@media (min-width: 768px) {
-    .hero-card {
-        max-width: 420px;
-        padding: 40px 32px;
-    }
-    
-    .hero-logo {
-        width: 110px;
-        height: 110px;
-        margin-bottom: 24px;
-    }
-    
-    .hero-card h3 {
-        font-size: 1.5rem;
-    }
-    
-    .hero-card p {
-        font-size: 1.1rem;
-    }
-}
+        .hero-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: var(--border-radius-lg);
+            padding: 24px;
+            text-align: center;
+            box-shadow: var(--shadow-medium);
+            position: relative;
+            overflow: hidden;
+            max-width: 280px;
+            margin: 0 auto;
+        }
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--accent-gradient);
+        }
+        .hero-logo {
+            width: 80px;
+            height: 80px;
+            overflow: hidden;
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border: 3px solid rgba(212, 175, 55, 0.3);
+        }
+        .hero-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .hero-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--white);
+        }
+        .hero-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+        }
+        .experience-badge {
+            background: var(--accent-gradient);
+            color: var(--white);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: inline-block;
+        }
 
         .hero-text {
             display: flex;
@@ -1688,6 +1636,7 @@ ${data.message}`;
     </script>
 </body>
 </html>
+
 
 
 
