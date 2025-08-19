@@ -1383,7 +1383,7 @@
         </div>
     </footer>
 
-    <!-- Quick Contact Buttons -->
+     <!-- Quick Contact Buttons -->
     <div class="quick-contact">
         <a href="tel:0544679144" class="quick-contact-btn phone" aria-label="התקשר לעו"ד נעמן">
             📞
@@ -1392,6 +1392,14 @@
             💬
         </a>
     </div>
+
+    <!-- טעינת ספריית EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+      (function(){
+        emailjs.init("8Wh5LSV3nex318hJ7"); // ה-Public Key שלך
+      })();
+    </script>
 
     <script>
         // Enhanced smooth scrolling
@@ -1489,7 +1497,7 @@
             });
         }
 
-        // Notification system
+         // Notification system
         function showNotification(message, type = 'success') {
             const existingNotifications = document.querySelectorAll('.notification');
             existingNotifications.forEach(notification => notification.remove());
@@ -1506,14 +1514,13 @@
                 setTimeout(() => notification.remove(), 300);
             }, 5000);
         }
-
-        // Contact form handling
+        // Contact form handling with EmailJS
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
-            
+
             if (!data.name || !data.phone || !data.email || !data.subject || !data.message) {
                 showNotification('אנא מלא את כל השדות הנדרשים', 'error');
                 return;
@@ -1524,25 +1531,18 @@
             button.textContent = 'שולח הודעה...';
             button.disabled = true;
 
-            const emailSubject = `פנייה חדשה מהאתר: ${data.subject}`;
-            const emailBody = `שלום עו"ד נעמן,
+            // שליחת אימייל דרך EmailJS
+            emailjs.send("service_zjb8pns", "template_9e6prma", {
+                from_name: data.name,
+                from_phone: data.phone,
+                from_email: data.email,
+                subject: data.subject,
+                message: data.message
+            }).then(function(response) {
+                showNotification('ההודעה נשלחה בהצלחה!', 'success');
 
-קיבלת פנייה חדשה מהאתר:
-
-פרטי הפונה:
-שם: ${data.name}
-טלפון: ${data.phone}
-דואר אלקטרוני: ${data.email}
-
-נושא הפנייה: ${data.subject}
-
-תוכן ההודעה:
-${data.message}
-
-בברכה,
-מערכת האתר`;
-
-            const whatsappMessage = `שלום עו"ד נעמן,
+                // אחרי שליחת האימייל – לשאול על ווטסאפ
+                const whatsappMessage = `שלום עו"ד נעמן,
 
 פנייה חדשה מהאתר:
 
@@ -1554,29 +1554,21 @@ ${data.message}
 💬 הודעה:
 ${data.message}`;
 
-            const mailtoLink = `mailto:naaman.office@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
-            const whatsappLink = `https://wa.me/972544679144?text=${encodeURIComponent(whatsappMessage)}`;
-
-            try {
-                window.open(mailtoLink, '_blank');
-                showNotification('ההודעה נשלחה בהצלחה!', 'success');
-                
                 setTimeout(() => {
                     if (confirm('האם תרצה לשלוח את ההודעה גם בווטסאפ?')) {
+                        const whatsappLink = `https://wa.me/972544679144?text=${encodeURIComponent(whatsappMessage)}`;
                         window.open(whatsappLink, '_blank');
                     }
                 }, 2000);
 
-            } catch (error) {
-                window.open(whatsappLink, '_blank');
-                showNotification('ההודעה נשלחה בווטסאפ!', 'success');
-            }
-
-            this.reset();
-            setTimeout(() => {
+                e.target.reset();
+            }, function(error) {
+                console.error("שגיאה בשליחת אימייל:", error);
+                showNotification('אירעה שגיאה בשליחת ההודעה, נסה שוב', 'error');
+            }).finally(() => {
                 button.textContent = originalText;
                 button.disabled = false;
-            }, 1000);
+            });
         });
 
         // Optimized scroll handling
@@ -1649,3 +1641,4 @@ ${data.message}`;
     </script>
 </body>
 </html>
+
