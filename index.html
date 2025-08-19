@@ -632,123 +632,204 @@
             font-size: 1rem;
         }
 
-        /* Contact Section */
-        .contact {
-            padding: 120px 0;
-            background: var(--secondary-gradient);
-            color: var(--white);
-        }
+        /* Contact Section - עם טופס זמין למובייל */
+.contact {
+    padding: 80px 0; /* הקטנת הפדינג למובייל */
+    background: var(--secondary-gradient);
+    color: var(--white);
+}
 
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: start;
-        }
+.contact-content {
+    display: flex;
+    flex-direction: column; /* עמודה אחת במובייל */
+    gap: 40px; /* פחות מרחק במובייל */
+    align-items: stretch;
+}
 
-        .contact h2 {
-            font-size: clamp(2rem, 4vw, 2.8rem);
-            font-weight: 800;
-            margin-bottom: 2rem;
-        }
+.contact h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 800;
+    margin-bottom: 2rem;
+}
 
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* הקטנת המרחק למובייל */
+}
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            font-size: 1.1rem;
-            padding: 16px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: var(--border-radius-lg);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-        }
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 1rem; /* הקטנת הפונט למובייל */
+    padding: 14px; /* הקטנת הפדינג */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-lg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
 
-        .contact-item:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateX(8px);
-        }
+.contact-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(8px);
+}
 
-        .contact-item i {
-            width: 48px;
-            height: 48px;
-            background: var(--accent-gradient);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            box-shadow: var(--shadow-medium);
-        }
+.contact-item i {
+    width: 40px; /* הקטנת האייקון למובייל */
+    height: 40px;
+    background: var(--accent-gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    box-shadow: var(--shadow-medium);
+    flex-shrink: 0;
+}
 
-        .contact-form {
-            display: none;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 48px;
-            border-radius: var(--border-radius-xl);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: var(--shadow-large);
-        }
+/* טופס יצירת קשר - זמין למובייל */
+.contact-form {
+    display: block; /* שינוי מ-none ל-block */
+    background: rgba(255, 255, 255, 0.1);
+    padding: 32px 24px; /* הקטנת הפדינג למובייל */
+    border-radius: var(--border-radius-xl);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow-large);
+    width: 100%;
+}
 
-        .form-group {
-            margin-bottom: 24px;
-        }
+.contact-form h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--white);
+    text-align: center;
+}
 
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            font-size: 1rem;
-        }
+.form-group {
+    margin-bottom: 20px; /* הקטנת המרחק */
+}
 
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 16px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: var(--border-radius-lg);
-            background: rgba(255, 255, 255, 0.9);
-            font-size: 1rem;
-            font-family: inherit;
-            transition: all 0.3s ease;
-            color: var(--text-dark);
-        }
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.95rem; /* הקטנת הפונט */
+}
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            background: var(--white);
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
-        }
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px; /* הקטנת הפדינג */
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--border-radius-lg);
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    color: var(--text-dark);
+    box-sizing: border-box;
+}
 
-        .submit-button {
-            width: 100%;
-            padding: 16px;
-            background: var(--accent-gradient);
-            color: var(--white);
-            border: none;
-            border-radius: var(--border-radius-lg);
-            font-size: 1.1rem;
-            font-weight: 700;
-            font-family: inherit;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-medium);
-        }
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    background: var(--white);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+}
 
-        .submit-button:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-large);
-        }
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 16px;
+    background: var(--accent-gradient);
+    color: var(--white);
+    border: none;
+    border-radius: var(--border-radius-lg);
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-medium);
+}
+
+.submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-large);
+}
+
+.submit-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Tablet Responsive */
+@media (min-width: 768px) {
+    .contact {
+        padding: 120px 0; /* חזרה לפדינג המקורי בטאבלט */
+    }
+    
+    .contact-content {
+        flex-direction: row;
+        gap: 60px;
+        align-items: start;
+    }
+
+    .contact-info,
+    .contact-form {
+        flex: 1;
+    }
+    
+    .contact-item {
+        font-size: 1.1rem;
+        padding: 16px;
+    }
+    
+    .contact-item i {
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
+    }
+    
+    .contact-form {
+        padding: 48px;
+    }
+    
+    .contact-form h3 {
+        font-size: 1.8rem;
+        margin-bottom: 32px;
+    }
+    
+    .form-group {
+        margin-bottom: 24px;
+    }
+    
+    .form-group label {
+        font-size: 1rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 16px;
+    }
+}
+
+/* Desktop Responsive */
+@media (min-width: 1024px) {
+    .contact-content {
+        gap: 80px;
+    }
+}
 
 
         /* Footer - Mobile Optimized */
@@ -1636,6 +1717,7 @@ ${data.message}`;
     </script>
 </body>
 </html>
+
 
 
 
