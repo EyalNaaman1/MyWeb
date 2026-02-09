@@ -1777,11 +1777,18 @@ ${data.message}`;
                 document.body.classList.add('touch-device');
             }
     
-            setTimeout(() => {
-                slowScrollTo('#about', 3000); 
-            }, 1000); 
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (currentScroll < 50) {
+                setTimeout(() => {
+                    if ((window.pageYOffset || document.documentElement.scrollTop) < 50) {
+                        slowScrollTo('#about', 4000); 
+                    }
+                }, 1200); 
+            }
         });
     </script>
     <script src="https://cdn.enable.co.il/licenses/enable-L53961qddre3pfya-0226-79489/init.js"></script>
 </body>
 </html>
+
