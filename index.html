@@ -1226,17 +1226,6 @@
             font-size: 16px !important;
         }
     }
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
 
     footer p, footer span, footer div {
         color: #ffffff !important;
@@ -1249,7 +1238,19 @@
         color: #ffffff !important;
         opacity: 1 !important;
     }
-        
+
+    .footer-section p, .contact-item {
+        margin-bottom: 20px !important;
+    }
+
+    .contact-info a, .footer-content a, .contact-item a {
+        color: #ffffff !important;
+        text-decoration: underline !important;
+        display: inline-block;
+        padding: 12px 0; /* שטח לחיצה גדול יותר לאצבע */
+        min-height: 48px;
+        line-height: 1.5;
+    }
     </style>
 </head>
 <body>
@@ -1844,23 +1845,32 @@ ${data.message}`;
     <script src="https://cdn.enable.co.il/licenses/enable-L53961qddre3pfya-0226-79489/init.js"></script>
     <script>
     window.addEventListener('load', () => {
-        const fixAccessibility = setInterval(() => {
+        const fixAllAccessibility = setInterval(() => {
+            // 1. תיקון שמות נגישים לכפתורי השפה
             const heBtn = document.querySelector('[data-enable-lang="he_IL"]');
             const enBtn = document.querySelector('[data-enable-lang="en_US"]');
             const modal = document.getElementById('enable-modal');
-
-            if (heBtn && enBtn && modal) {
-                heBtn.setAttribute('aria-label', 'שנה שפה לעברית');
-                enBtn.setAttribute('aria-label', 'Change language to English');
-                modal.setAttribute('aria-label', 'תפריט נגישות');
-                clearInterval(fixAccessibility);
+            if(heBtn) heBtn.setAttribute('aria-label', 'שנה שפה לעברית');
+            if(enBtn) enBtn.setAttribute('aria-label', 'Change language to English');
+            if(modal) modal.setAttribute('aria-label', 'תפריט נגישות');
+    
+            // 2. תיקון שגיאת הכתיב של התוסף (ה-d החסרה)
+            const toolbar = document.getElementById('enable-toolbar-buttons');
+            if(toolbar) {
+                toolbar.setAttribute('aria-labelledby', 'enable-toolbar-trigger');
+                toolbar.removeAttribute('aria-labeledby'); // הסרת השגיאה
+                toolbar.setAttribute('role', 'menu'); // תיקון ה-Parent Role
             }
+    
+            // אם מצאנו את הכל, אפשר לעצור
+            if(heBtn && toolbar) clearInterval(fixAllAccessibility);
         }, 500);
-
-        setTimeout(() => clearInterval(fixAccessibility), 5000);
+    
+        setTimeout(() => clearInterval(fixAllAccessibility), 5000);
     });
-</script>
+    </script>
 </body>
 </html>
+
 
 
