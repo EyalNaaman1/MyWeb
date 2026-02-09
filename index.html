@@ -717,9 +717,15 @@
     flex-shrink: 0;
 }
 .contact-item a, footer a {
-    color: #ffffff !important; /* הופך את הטלפון והמייל ללבן קריא */
+    color: #ffffff !important;
     text-decoration: underline;
     transition: color 0.3s ease;
+}
+
+.contact-info a, 
+.footer-content a {
+    color: #ffffff !important;
+    text-decoration: underline !important;
 }
     .sr-only {
         position: absolute;
@@ -1234,6 +1240,14 @@
 
     footer p, footer span, footer div {
         color: #ffffff !important;
+    }
+
+    footer p, 
+    footer span, 
+    footer a, 
+    .footer-bottom p {
+        color: #ffffff !important;
+        opacity: 1 !important;
     }
         
     </style>
@@ -1848,4 +1862,5 @@ ${data.message}`;
 </script>
 </body>
 </html>
+
 
