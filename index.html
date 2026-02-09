@@ -1231,6 +1231,11 @@
             white-space: nowrap;
             border: 0;
         }
+
+    footer p, footer span, footer div {
+        color: #ffffff !important;
+    }
+        
     </style>
 </head>
 <body>
@@ -1824,15 +1829,23 @@ ${data.message}`;
     </script>
     <script src="https://cdn.enable.co.il/licenses/enable-L53961qddre3pfya-0226-79489/init.js"></script>
     <script>
-        window.addEventListener('load', () => {
+    window.addEventListener('load', () => {
+        const fixAccessibility = setInterval(() => {
             const heBtn = document.querySelector('[data-enable-lang="he_IL"]');
             const enBtn = document.querySelector('[data-enable-lang="en_US"]');
             const modal = document.getElementById('enable-modal');
-            
-            if(heBtn) heBtn.setAttribute('aria-label', 'שנה שפה לעברית');
-            if(enBtn) enBtn.setAttribute('aria-label', 'Change language to English');
-            if(modal) modal.setAttribute('aria-label', 'תפריט נגישות');
-        });
-    </script>
+
+            if (heBtn && enBtn && modal) {
+                heBtn.setAttribute('aria-label', 'שנה שפה לעברית');
+                enBtn.setAttribute('aria-label', 'Change language to English');
+                modal.setAttribute('aria-label', 'תפריט נגישות');
+                clearInterval(fixAccessibility);
+            }
+        }, 500);
+
+        setTimeout(() => clearInterval(fixAccessibility), 5000);
+    });
+</script>
 </body>
 </html>
+
