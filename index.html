@@ -1192,42 +1192,12 @@
             outline-offset: 2px;
         }
 
-        /* Scroll Indicato */
-        .scroll-indicator {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 30px;
-            height: 50px;
-            border: 2px solid var(--accent-color);
-            border-radius: 20px;
-            opacity: 0.7;
-            z-index: 10;
-            display: flex;
-            justify-content: center;
+        /* prevent auto zoom in IOS */
+    @media screen and (max-width: 768px) {
+        input, textarea, select {
+            font-size: 16px !important;
         }
-
-        .scroll-indicator span {
-            position: absolute;
-            top: 10px;
-            width: 6px;
-            height: 6px;
-            background-color: var(--accent-color);
-            border-radius: 50%;
-            animation: scroll-dot 2s infinite;
-        }
-
-        @keyframes scroll-dot {
-            0% { transform: translateY(0); opacity: 1; }
-            50% { opacity: 1; }
-            100% { transform: translateY(20px); opacity: 0; }
-        }
-
-        body.scrolled .scroll-indicator {
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
+    }
     </style>
 </head>
 <body>
@@ -1287,9 +1257,6 @@
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-        <span></span>
-    </div>
     </section>
 
     <!-- About Section -->
@@ -1758,41 +1725,60 @@ ${data.message}`;
             }
         });
 
-        // Touch-friendly enhancements
-        if ('ontouchstart' in window) {
-            document.body.classList.add('touch-device');
-        }
-
+        let animationFrame;
+        
         function slowScrollTo(targetSelector, duration) {
             const target = document.querySelector(targetSelector);
             if (!target) return;
-
+    
             const targetPosition = target.offsetTop - 80;
             const startPosition = window.pageYOffset;
             const distance = targetPosition - startPosition;
             let startTime = null;
-
+    
+            const stopAutoScroll = () => {
+                if (animationFrame) {
+                    cancelAnimationFrame(animationFrame);
+                    // הסרת המאזינים לאחר שהגלילה נעצרה
+                    window.removeEventListener('wheel', stopAutoScroll);
+                    window.removeEventListener('touchstart', stopAutoScroll);
+                }
+            };
+    
+            window.addEventListener('wheel', stopAutoScroll, { passive: true });
+            window.addEventListener('touchstart', stopAutoScroll, { passive: true });
+    
             function ease(t, b, c, d) {
                 t /= d / 2;
                 if (t < 1) return c / 2 * t * t + b;
                 t--;
                 return -c / 2 * (t * (t - 2) - 1) + b;
             }
-
+    
             function animation(currentTime) {
                 if (startTime === null) startTime = currentTime;
                 const timeElapsed = currentTime - startTime;
                 const run = ease(timeElapsed, startPosition, distance, duration);
+                
                 window.scrollTo(0, run);
-                if (timeElapsed < duration) requestAnimationFrame(animation);
+    
+                if (timeElapsed < duration) {
+                    animationFrame = requestAnimationFrame(animation);
+                } else {
+                    window.removeEventListener('wheel', stopAutoScroll);
+                    window.removeEventListener('touchstart', stopAutoScroll);
+                }
             }
-            requestAnimationFrame(animation);
+            animationFrame = requestAnimationFrame(animation);
         }
-
+    
         window.addEventListener('load', () => {
+            if ('ontouchstart' in window) {
+                document.body.classList.add('touch-device');
+            }
+    
             setTimeout(() => {
-                slowScrollTo('#about', 3000);
-                document.body.classList.add('scrolled');
+                slowScrollTo('#about', 3000); 
             }, 1000); 
         });
     </script>
