@@ -1740,8 +1740,21 @@ ${data.message}`;
                 }
             });
         });
+
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const aboutSection = document.querySelector('#about');
+                if (aboutSection) {
+                    window.scrollTo({
+                        top: aboutSection.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 2000); 
+        });
     </script>
     <script src="https://cdn.enable.co.il/licenses/enable-L53961qddre3pfya-0226-79489/init.js"></script>
 </body>
 </html>
+
 
