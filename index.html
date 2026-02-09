@@ -1198,6 +1198,17 @@
             font-size: 16px !important;
         }
     }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 <body>
@@ -1493,11 +1504,11 @@
 
      <!-- Quick Contact Buttons -->
     <div class="quick-contact">
-        <a href="tel:0544679144" class="quick-contact-btn phone" aria-label="התקשר לעו"ד נעמן">
-            📞
+        <a href="tel:0544679144" class="quick-contact-btn phone" aria-label="התקשר לעורך דין נעמן">
+            📞 <span class="sr-only">התקשר עכשיו</span>
         </a>
-        <a href="https://wa.me/972544679144" class="quick-contact-btn whatsapp" target="_blank" rel="noopener" aria-label="שלח הודעה בווטסאפ לעו"ד נעמן">
-            💬
+        <a href="https://wa.me/972544679144" class="quick-contact-btn whatsapp" target="_blank" rel="noopener" aria-label="שלח הודעה בווטסאפ לעורך דין נעמן">
+            💬 <span class="sr-only">שלח הודעה בווטסאפ</span>
         </a>
     </div>
 
@@ -1791,5 +1802,6 @@ ${data.message}`;
     <script src="https://cdn.enable.co.il/licenses/enable-L53961qddre3pfya-0226-79489/init.js"></script>
 </body>
 </html>
+
 
 
