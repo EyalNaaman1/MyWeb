@@ -1556,7 +1556,7 @@
     </div>
 
     <!-- טעינת ספריית EmailJS -->
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
       (function(){
         emailjs.init("8Wh5LSV3nex318hJ7"); // ה-Public Key שלך
@@ -1694,6 +1694,12 @@
             button.disabled = true;
 
             // שליחת אימייל דרך EmailJS
+            if (typeof emailjs === 'undefined') {
+                showNotification('מערכת השליחה בטעינה, אנא נסה שוב בעוד רגע', 'error');
+                button.textContent = originalText;
+                button.disabled = false;
+                return;
+            }
             emailjs.send("service_zjb8pns", "template_9e6prma", {
                 from_name: data.name,
                 from_phone: data.phone,
@@ -1871,6 +1877,7 @@ ${data.message}`;
     </script>
 </body>
 </html>
+
 
 
 
