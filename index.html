@@ -1700,27 +1700,25 @@
                 button.disabled = false;
                 return;
             }
-            emailjs.send("service_zjb8pns", "template_9e6prma", {
+
+            const templateParams = {
                 from_name: data.name,
                 from_phone: data.phone,
                 from_email: data.email,
                 subject: data.subject,
-                message: data.message
-            }).then(function(response) {
+                message: data.message,
+                name: data.name,
+                email: data.email
+            };
+            
+            emailjs.send("service_zjb8pns", "template_9e6prma",
+                        templateParams, "8Wh5LSV3nex318hJ7"
+                        ).then(function(response) {
                 showNotification('ההודעה נשלחה בהצלחה!', 'success');
 
                 // אחרי שליחת האימייל – לשאול על ווטסאפ
-                const whatsappMessage = `שלום עו"ד נעמן,
-
-פנייה חדשה מהאתר:
-
-📝 שם: ${data.name}
-📞 טלפון: ${data.phone}
-📧 דואר: ${data.email}
-🏷️ נושא: ${data.subject}
-
-💬 הודעה:
-${data.message}`;
+                const whatsappMessage = `שלום עו"ד נעמן,\n\nפנייה חדשה מהאתר:\n\n
+                📝 שם: ${data.name}\n📞 טלפון: ${data.phone}\n📧 דואר: ${data.email}\n🏷️ נושא: ${data.subject}\n\n💬 הודעה:\n${data.message}`;
 
                 setTimeout(() => {
                     if (confirm('האם תרצה לשלוח את ההודעה גם בווטסאפ?')) {
@@ -1877,7 +1875,3 @@ ${data.message}`;
     </script>
 </body>
 </html>
-
-
-
-
