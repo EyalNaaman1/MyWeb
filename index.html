@@ -128,8 +128,8 @@
             background-image: url('office-bg.jpg'); /* התמונה שהכנת */
             background-size: cover;
             background-position: center;
-            filter: blur(8px); /* אפקט הטשטוש שביקשת */
-            opacity: 0.35; /* שקיפות שמבטיחה שהטקסט יישאר קריא וברור */
+            filter: blur(4px); /* הורדנו את הטשטוש כדי שצורת הספרייה תהיה ברורה יותר */
+            opacity: 0.85; /* העלינו משמעותית את נראות התמונה (הייתה 0.35) */
             z-index: 0;
         }
         
@@ -138,9 +138,11 @@
             content: '';
             position: absolute; inset: 0;
             background:
-                linear-gradient(160deg, rgba(7, 13, 20, 0.95) 0%, rgba(17, 30, 48, 0.65) 50%, rgba(11, 18, 28, 0.95) 100%),
-                radial-gradient(circle at 75% 30%, rgba(201,162,75,0.15) 0%, transparent 60%),
-                radial-gradient(circle at 20% 80%, rgba(201,162,75,0.08) 0%, transparent 60%);
+                /* שכבת הכהיה עדינה יותר שנותנת לתמונה לבלוט במרכז */
+                linear-gradient(160deg, rgba(7, 13, 20, 0.8) 0%, rgba(17, 30, 48, 0.25) 50%, rgba(11, 18, 28, 0.8) 100%),
+                /* נגיעות האור המוזהבות */
+                radial-gradient(circle at 75% 30%, rgba(201,162,75,0.25) 0%, transparent 60%),
+                radial-gradient(circle at 20% 80%, rgba(201,162,75,0.15) 0%, transparent 60%);
             z-index: 1;
             pointer-events: none;
         }
