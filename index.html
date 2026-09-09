@@ -135,8 +135,9 @@
         .hero::after {
             content: '';
             position: absolute; inset: 0;
+            /* שינוי קריטי: גרדיאנט חלק מאוד בלי פסי הפרדה באמצע המסך */
             background:
-                linear-gradient(to right, rgba(11, 18, 28, 0.95) 0%, rgba(7, 13, 20, 0.8) 40%, rgba(17, 30, 48, 0.15) 100%),
+                linear-gradient(to right, rgba(7, 13, 20, 0.98) 0%, rgba(7, 13, 20, 0.85) 35%, rgba(7, 13, 20, 0.2) 75%, transparent 100%),
                 radial-gradient(circle at 25% 30%, rgba(201,162,75,0.15) 0%, transparent 60%);
             z-index: 1;
             pointer-events: none;
@@ -235,7 +236,6 @@
         }
         .cta-button.secondary:hover { background: var(--navy-2); color: var(--gold); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
 
-        /* THE NEW HERO VISUAL STRUCTURE (LAWYER IN FRONT, DESK BLURRED BEHIND) */
         .hero-visual {
             width: 100%; display: flex; justify-content: center; align-items: flex-end;
             position: relative; z-index: 5;
@@ -248,22 +248,21 @@
             width: 100%; max-width: 450px; height: auto; display: block;
             object-fit: contain; object-position: bottom;
             position: relative; 
-            z-index: 2; /* עו"ד מעל השולחן */
+            z-index: 2; 
             margin-bottom: 0px; 
             filter: drop-shadow(0 20px 40px rgba(0,0,0,0.7)) brightness(0.95) contrast(1.05) sepia(0.1);
         }
 
         .hero-desk {
             position: absolute;
-            bottom: 20px; /* השולחן קצת למעלה כדי שהעו"ד יכסה את המרכז */
-            left: 50%;
-            transform: translateX(-50%);
+            bottom: 20px; 
+            right: 50%; /* יישור למובייל */
+            transform: translateX(50%);
             width: 100%; 
             max-width: 650px; 
             height: auto;
-            z-index: 1; /* שולחן מאחורי העו"ד */
+            z-index: 1; 
             pointer-events: none;
-            /* הוספת טשטוש והכהיה קלה לשולחן ליצירת עומק שדה (Depth of Field) */
             filter: drop-shadow(0 15px 30px rgba(0,0,0,0.8)) blur(2px) brightness(0.85);
         }
 
@@ -600,7 +599,7 @@
         
         .footer-bottom { padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); color: #6b7280; font-size: 0.85rem; line-height: 1.5; text-align: center; }
 
-        /* ===== Quick contact (Moved to RIGHT) ===== */
+        /* ===== Quick contact (Right) ===== */
         .quick-contact { 
             position: fixed; bottom: 20px; right: 20px; left: auto; 
             z-index: 1500; display: flex; flex-direction: column; gap: 12px; 
@@ -681,7 +680,6 @@
             .nav-links { display: flex; gap: 4px; }
             .nav-toggle { display: none; }
 
-            /* Hero Layout Desktop - TEXT ON LEFT, VISUAL ON RIGHT */
             .hero { padding: 130px 0 0 0; }
             .hero-container { 
                 flex-direction: row; 
@@ -716,12 +714,15 @@
                 max-width: 500px; 
                 margin-left: 0; 
             }
+            
+            /* הזזת השולחן הכי ימינה שאפשר בלי לפגוע בפרופורציה */
             .hero-desk {
-                width: 110%;
-                max-width: 700px;
-                left: 10%; 
-                transform: translateX(-10%); 
-                bottom: 40px; 
+                width: 120%;
+                max-width: 750px;
+                left: auto; 
+                right: -15%; /* הזזה חדה ימינה */
+                transform: none; 
+                bottom: 25px; 
             }
 
             /* Other Sections */
@@ -833,7 +834,6 @@
     <main>
     <section class="hero" id="hero">
         <div class="container hero-container">
-            <!-- IMPORTANT: THE VISUAL DIV IS FIRST NOW SO IT GOES TO THE RIGHT IN RTL -->
             <div class="hero-visual">
                 <img src="image1.png" alt='עו"ד ונוטריון משה נעמן' class="hero-lawyer">
                 <img src="desk.png" alt='שולחן משרדי' class="hero-desk">
