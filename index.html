@@ -423,6 +423,41 @@
         .submit-button:hover { transform: translateY(-2px); box-shadow: var(--shadow-large); }
         .submit-button:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
 
+        /* Input validation state */
+        .form-group input.input-error,
+        .form-group textarea.input-error {
+            border-color: #ef4444;
+            box-shadow: 0 0 0 4px rgba(239,68,68,0.15);
+        }
+
+        /* WhatsApp follow-up button (shown after successful submit) */
+        #whatsappFollowup { margin-top: 14px; }
+        .whatsapp-followup-btn {
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            width: 100%; padding: 14px 18px;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: var(--white); text-decoration: none;
+            border-radius: var(--radius-lg); font-weight: 700; font-size: 0.92rem;
+            box-shadow: var(--shadow-medium);
+            opacity: 0; transform: translateY(-8px);
+            transition: opacity 0.35s ease, transform 0.35s ease, box-shadow 0.25s ease;
+            text-align: center; line-height: 1.4;
+        }
+        .whatsapp-followup-btn.show { opacity: 1; transform: translateY(0); }
+        .whatsapp-followup-btn:hover { box-shadow: var(--shadow-large); transform: translateY(-2px); }
+
+        /* Google Maps embed */
+        .map-embed-wrap {
+            margin-top: 20px;
+            width: 100%;
+            height: 260px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-large);
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+        .map-embed-wrap iframe { width: 100%; height: 100%; display: block; }
+
         /* ===== Footer ===== */
         footer { background: #0A1118; color: #C7CDD7; padding: 50px 0 30px; border-top: 1px solid rgba(201,162,75,0.12); }
         .footer-content { display: flex; flex-direction: column; gap: 28px; margin-bottom: 28px; }
@@ -455,6 +490,18 @@
         .quick-contact-btn:hover { transform: scale(1.1); }
         .quick-contact-btn.phone { background: var(--gold-gradient); color: #1A1408; }
         .quick-contact-btn.whatsapp { background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); }
+        .quick-contact-btn.back-to-top {
+            background: var(--navy);
+            color: var(--gold);
+            border: 1px solid rgba(201,162,75,0.35);
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(10px) scale(0.9);
+            transition: opacity 0.25s ease, transform 0.25s ease, background 0.25s ease;
+        }
+        .quick-contact-btn.back-to-top.show { opacity: 1; transform: translateY(0) scale(1); }
+        .quick-contact-btn.back-to-top:hover { background: var(--navy-2); }
+        .quick-contact-btn.back-to-top[hidden] { display: none; }
 
         /* ===== Notifications ===== */
         .notification {
@@ -515,6 +562,7 @@
 
             .contact-content { flex-direction: row; gap: 60px; }
             .contact-info, .contact-form { flex: 1; }
+            .map-embed-wrap { height: 320px; }
 
             .footer-content { flex-direction: row; justify-content: space-between; text-align: right; }
             .footer-section { flex: 1; }
@@ -618,7 +666,7 @@
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5"/></svg>
                         </div>
                         <div class="hero-seal" aria-hidden="true">
-                            <img src="image2.jpg" alt="לוגו המשרד">
+                            <img src="image2.jpg" alt="לוגו המשרד" width="200" height="200">
                         </div>
                         <h3>עו"ד ונוטריון משה נעמן</h3>
                         <p>מומחה במערכת המשפט הישראלית</p>
@@ -634,7 +682,7 @@
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                         עורך דין ונוטריון מוסמך
                     </div>
-                    <h1>עו"ד <span class="highlight">משה נעמן</span></h1>
+                    <h1>עורך דין ונוטריון <span class="highlight">משה נעמן</span></h1>
                     <p class="subtitle">שירותים משפטיים מקצועיים ואמינים, עם ניסיון וותק של מעל 20 שנה במערכת המשפט הישראלית</p>
                     <div class="cta-buttons">
                         <a href="https://wa.me/972544679144" class="cta-button" target="_blank" rel="noopener" aria-label="קבע פגישת ייעוץ בוואטסאפ, נפתח בחלון חדש">
@@ -682,7 +730,7 @@
                 </div>
                 <div class="lawyer-image-wrap slide-in-right">
                     <div class="lawyer-image">
-                        <img src="image1.jpg" alt="עו"ד ונוטריון משה נעמן בלבוש רשמי, תמונת פרופיל מקצועית" loading="lazy">
+                        <img src="image1.jpg" alt="עו"ד ונוטריון משה נעמן בלבוש רשמי, תמונת פרופיל מקצועית" loading="lazy" width="400" height="500">
                     </div>
                 </div>
             </div>
@@ -870,9 +918,17 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="map-embed-wrap">
+                        <iframe
+                            src="https://www.google.com/maps?q=%D7%A8%D7%97%27+%D7%94%D7%AA%D7%99%D7%9B%D7%95%D7%9F+7%D7%90%27+%D7%A0%D7%95%D7%95%D7%94+%D7%A9%D7%90%D7%A0%D7%9F+%D7%97%D7%99%D7%A4%D7%94&output=embed"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="מפת המשרד - רח' התיכון 7א', נווה שאנן, חיפה"></iframe>
+                    </div>
                 </div>
 
-                <form class="contact-form slide-in-right" id="contactForm" aria-label="טופס יצירת קשר">
+                <form class="contact-form slide-in-right" id="contactForm" aria-label="טופס יצירת קשר" novalidate>
                     <h3>שלח הודעה</h3>
                     <div class="form-group">
                         <label for="name">שם מלא *</label>
@@ -895,6 +951,7 @@
                         <textarea id="message" name="message" rows="4" required></textarea>
                     </div>
                     <button type="submit" class="submit-button">שלח הודעה</button>
+                    <div id="whatsappFollowup"></div>
                 </form>
             </div>
         </div>
@@ -952,6 +1009,10 @@
     </footer>
 
     <div class="quick-contact">
+        <button id="backToTopBtn" class="quick-contact-btn back-to-top" aria-label="חזרה לראש הדף" type="button" hidden>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+            <span class="sr-only">חזרה לראש הדף</span>
+        </button>
         <a href="tel:0544679144" class="quick-contact-btn phone" aria-label="התקשר עכשיו לעו"ד נעמן, מספר 054-4679144">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             <span class="sr-only">התקשר עכשיו</span>
@@ -973,10 +1034,22 @@
         // Mobile nav toggle
         const navToggle = document.getElementById('navToggle');
         const mobileNav = document.getElementById('mobileNav');
-        navToggle.addEventListener('click', () => {
+        navToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
             const isOpen = mobileNav.classList.toggle('open');
             navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
             navToggle.setAttribute('aria-label', isOpen ? 'סגור תפריט ניווט' : 'פתח תפריט ניווט');
+        });
+
+        // Close mobile nav when clicking outside of it
+        document.addEventListener('click', (e) => {
+            if (!mobileNav.classList.contains('open')) return;
+            const clickedInsideNav = mobileNav.contains(e.target) || navToggle.contains(e.target);
+            if (!clickedInsideNav) {
+                mobileNav.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.setAttribute('aria-label', 'פתח תפריט ניווט');
+            }
         });
 
         // Smooth scrolling + close mobile nav on click
@@ -1066,14 +1139,43 @@
             }, 5000);
         }
 
+        // Form field validation helpers
+        const contactForm = document.getElementById('contactForm');
+        const requiredFields = contactForm.querySelectorAll('input[required], textarea[required]');
+
+        function isFieldValid(field) {
+            if (field.type === 'email') {
+                return field.value.trim() !== '' && field.checkValidity();
+            }
+            return field.value.trim() !== '';
+        }
+
+        requiredFields.forEach(field => {
+            field.addEventListener('input', () => {
+                if (isFieldValid(field)) {
+                    field.classList.remove('input-error');
+                }
+            });
+        });
+
         // Contact form with EmailJS
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
 
-            if (!data.name || !data.phone || !data.email || !data.subject || !data.message) {
-                showNotification('אנא מלא את כל השדות הנדרשים', 'error');
+            let hasError = false;
+            requiredFields.forEach(field => {
+                if (!isFieldValid(field)) {
+                    field.classList.add('input-error');
+                    hasError = true;
+                } else {
+                    field.classList.remove('input-error');
+                }
+            });
+
+            if (hasError) {
+                showNotification('אנא מלא כראוי את כל השדות המסומנים', 'error');
                 return;
             }
 
@@ -1081,6 +1183,9 @@
             const originalText = button.textContent;
             button.textContent = 'שולח הודעה...';
             button.disabled = true;
+
+            const whatsappFollowup = document.getElementById('whatsappFollowup');
+            whatsappFollowup.innerHTML = '';
 
             if (typeof emailjs === 'undefined') {
                 showNotification('מערכת השליחה בטעינה, אנא נסה שוב בעוד רגע', 'error');
@@ -1104,13 +1209,20 @@
                     showNotification('ההודעה נשלחה בהצלחה!', 'success');
 
                     const whatsappMessage = `שלום עו"ד נעמן,\n\nפנייה חדשה מהאתר:\n\n📝 שם: ${data.name}\n📞 טלפון: ${data.phone}\n📧 דואר: ${data.email}\n🏷️ נושא: ${data.subject}\n\n💬 הודעה:\n${data.message}`;
+                    const whatsappLink = `https://wa.me/972544679144?text=${encodeURIComponent(whatsappMessage)}`;
 
-                    setTimeout(() => {
-                        if (confirm('האם תרצה לשלוח את ההודעה גם בווטסאפ?')) {
-                            const whatsappLink = `https://wa.me/972544679144?text=${encodeURIComponent(whatsappMessage)}`;
-                            window.open(whatsappLink, '_blank');
-                        }
-                    }, 2000);
+                    const waBtn = document.createElement('a');
+                    waBtn.href = whatsappLink;
+                    waBtn.target = '_blank';
+                    waBtn.rel = 'noopener';
+                    waBtn.className = 'whatsapp-followup-btn';
+                    waBtn.innerHTML = `
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4a8.94 8.94 0 0 0-7.74 13.4L3 21l3.7-1.27a8.93 8.93 0 0 0 5.36 1.72h.01a8.94 8.94 0 0 0 8.93-8.85 8.86 8.86 0 0 0-2.5-6.28zM12.06 19.8a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.96.94-2.73-.18-.28a7.4 7.4 0 1 1 6.1 3.25zm4.1-5.5c-.22-.11-1.31-.65-1.51-.72-.2-.07-.35-.11-.5.11-.15.22-.57.72-.7.86-.13.15-.26.16-.48.05-1.32-.66-2.18-1.18-3.05-2.67-.23-.4.23-.37.66-1.23.07-.15.04-.27-.03-.38-.07-.11-.62-1.5-.85-2.05-.22-.53-.45-.46-.62-.47-.16-.01-.34-.01-.52-.01-.18 0-.46.07-.71.34-.25.27-.94.92-.94 2.24 0 1.32.96 2.6 1.1 2.78.13.18 1.83 2.8 4.45 3.81 2.1.8 2.52.64 2.97.6.45-.04 1.45-.59 1.66-1.17.2-.57.2-1.06.14-1.17-.06-.1-.21-.16-.43-.27z"/></svg>
+                        <span>הטופס נשלח בהצלחה! לחץ כאן לשליחה גם בווטסאפ (אופציונלי)</span>
+                    `;
+                    whatsappFollowup.innerHTML = '';
+                    whatsappFollowup.appendChild(waBtn);
+                    requestAnimationFrame(() => waBtn.classList.add('show'));
 
                     e.target.reset();
                 }, function(error) {
@@ -1122,11 +1234,28 @@
                 });
         });
 
+        // Back to top button
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        function updateBackToTop() {
+            if (window.scrollY > 300) {
+                backToTopBtn.hidden = false;
+                requestAnimationFrame(() => backToTopBtn.classList.add('show'));
+            } else {
+                backToTopBtn.classList.remove('show');
+                backToTopBtn.hidden = true;
+            }
+        }
+        backToTopBtn.addEventListener('click', () => {
+            const target = document.getElementById('hero');
+            const offsetTop = target ? target.offsetTop : 0;
+            window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+        });
+
         // Scroll handling
         let ticking = false;
         function requestTick() {
             if (!ticking) {
-                requestAnimationFrame(() => { updateActiveNav(); ticking = false; });
+                requestAnimationFrame(() => { updateActiveNav(); updateBackToTop(); ticking = false; });
                 ticking = true;
             }
         }
@@ -1139,6 +1268,7 @@
                 });
             }, 100);
             updateActiveNav();
+            updateBackToTop();
         });
 
         // Keyboard navigation for FAQ (Escape closes open answers)
