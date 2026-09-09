@@ -137,123 +137,95 @@
         .mobile-nav.open { display: flex; }
         .mobile-nav .floating-nav-item { justify-content: flex-start; padding: 14px 16px; }
 
-        /* ===== Hero ===== */
+        /* ===== Hero (Cutout Luxury Redesign) ===== */
         .hero {
             min-height: 100vh;
-            background: var(--navy-gradient);
+            background: linear-gradient(160deg, #070d14 0%, #111e30 55%, #0b121c 100%);
             color: var(--white);
             position: relative;
             overflow: hidden;
-            display: flex; align-items: center;
-            padding: 100px 0 50px;
+            display: flex;
+            align-items: flex-end; /* Pushes image flush to bottom */
+            padding: 100px 0 0 0;
         }
         .hero::before {
             content: '';
             position: absolute; inset: 0;
             background:
-                radial-gradient(circle at 85% 15%, rgba(201,162,75,0.10) 0%, transparent 45%),
-                radial-gradient(circle at 10% 85%, rgba(201,162,75,0.06) 0%, transparent 50%);
+                radial-gradient(circle at 75% 30%, rgba(201,162,75,0.15) 0%, transparent 55%),
+                radial-gradient(circle at 20% 80%, rgba(201,162,75,0.08) 0%, transparent 60%);
+            z-index: 1;
         }
         .hero::after {
             content: '';
-            position: absolute; inset: 0; opacity: 0.04; pointer-events: none;
+            position: absolute; inset: 0; opacity: 0.03; pointer-events: none; z-index: 1;
             background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 38px, var(--gold) 39px);
         }
-        .hero-content {
-            position: relative; z-index: 2; width: 100%;
-            display: flex; flex-direction: column; gap: 48px;
-            align-items: center; text-align: center;
+        
+        .hero-container {
+            width: 100%;
+            display: flex; flex-direction: column;
+            position: relative; z-index: 2;
+            height: 100%;
         }
-        .hero-visual {
-            order: -1; opacity: 0; animation: slideDown 0.9s ease 0.15s forwards;
-            width: 100%; display: flex; justify-content: center;
-            margin-bottom: 34px;
-        }
-        .hero-portrait-frame {
-            position: relative;
-            width: 100%; max-width: 340px;
-            aspect-ratio: 4 / 5;
-            border-radius: var(--radius-xl);
-            overflow: hidden;
-            border: 1px solid rgba(201,162,75,0.3);
-            box-shadow: var(--shadow-large);
-            background: var(--charcoal);
-        }
-        .hero-portrait-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .hero-portrait-frame::after {
-            content: '';
-            position: absolute; inset: 0;
-            background: linear-gradient(0deg, rgba(15,27,45,0.55) 0%, rgba(15,27,45,0) 38%);
-            pointer-events: none;
-        }
-        .hero-floating-badge {
-            position: absolute; bottom: -22px; left: 50%; transform: translateX(-50%);
-            display: flex; align-items: center; gap: 12px;
-            background: rgba(15,27,45,0.94);
-            backdrop-filter: blur(14px);
-            border: 1px solid rgba(201,162,75,0.35);
-            border-radius: 999px;
-            padding: 8px 22px 8px 8px;
-            box-shadow: var(--shadow-large);
-            white-space: nowrap;
-        }
-        .hero-seal {
-            width: 46px; height: 46px; flex-shrink: 0;
-            border-radius: 50%; border: 2px solid rgba(201,162,75,0.5);
-            background: var(--white);
-            display: flex; align-items: center; justify-content: center;
-            overflow: hidden;
-        }
-        .hero-seal img { width: 100%; height: 100%; object-fit: cover; }
-        .hero-floating-badge-text { display: flex; flex-direction: column; line-height: 1.15; text-align: right; }
-        .hero-floating-badge-text strong { font-family: 'Frank Ruhl Libre', serif; font-size: 1.05rem; color: var(--gold); font-weight: 700; }
-        .hero-floating-badge-text span { font-size: 0.72rem; color: #C7CDD7; }
 
-        /* ===== Trust bar (below hero) ===== */
-        .trust-bar { background: var(--ivory); border-bottom: 1px solid var(--border-tan); padding: 22px 0; }
-        .trust-bar-inner {
-            display: flex; flex-wrap: wrap; justify-content: center; gap: 14px;
+        .hero-text {
+            display: flex; flex-direction: column; gap: 1.2rem;
+            max-width: 100%; text-align: center; align-items: center;
+            padding-bottom: 20px; z-index: 10;
         }
-        .trust-item {
-            display: inline-flex; align-items: center; gap: 8px;
-            font-size: 0.85rem; font-weight: 600; color: var(--text-dark);
-            padding: 8px 6px;
-        }
-        .trust-item svg { color: var(--gold-dark); flex-shrink: 0; }
-        .trust-divider { width: 1px; align-self: center; height: 18px; background: var(--border-tan); display: none; }
-
-        .hero-text { display: flex; flex-direction: column; gap: 1.5rem; max-width: 600px; }
+        
         .hero-badge {
             display: inline-flex; align-items: center; gap: 8px;
-            background: rgba(201,162,75,0.1);
-            border: 1px solid rgba(201,162,75,0.35);
-            padding: 8px 18px; border-radius: 25px;
-            font-size: 0.85rem; font-weight: 600; color: #D9B86C;
+            background: transparent;
+            border: 1px solid rgba(201,162,75,0.5);
+            padding: 8px 20px; border-radius: 30px;
+            font-size: 0.9rem; font-weight: 600; color: var(--gold);
             width: fit-content; margin: 0 auto;
-            opacity: 0; animation: slideUp 0.9s ease 0.35s forwards;
+            opacity: 0; animation: slideUp 0.9s ease 0.2s forwards;
         }
+        
         .hero h1 {
             font-family: 'Frank Ruhl Libre', serif;
-            font-size: clamp(2.2rem, 8vw, 3.6rem);
+            font-size: clamp(2.2rem, 8vw, 3.8rem);
             font-weight: 700; color: var(--white);
-            opacity: 0; animation: slideUp 0.9s ease 0.5s forwards;
-            line-height: 1.2;
+            opacity: 0; animation: slideUp 0.9s ease 0.4s forwards;
+            line-height: 1.1; margin-bottom: 0.2rem;
         }
-        .hero h1 .highlight { color: var(--gold); }
+        .hero h1 .highlight { 
+            color: var(--gold); 
+            display: block; /* Stacks text on mobile */
+            margin-top: 8px;
+        }
+        
         .hero .subtitle {
             font-size: clamp(1rem, 4vw, 1.2rem);
-            color: rgba(255,255,255,0.82);
-            line-height: 1.7;
-            opacity: 0; animation: slideUp 0.9s ease 0.65s forwards;
-            max-width: 520px; margin: 0 auto;
+            color: #C7CDD7;
+            line-height: 1.6;
+            opacity: 0; animation: slideUp 0.9s ease 0.6s forwards;
+            max-width: 540px; margin: 0 auto 10px;
         }
 
-        @keyframes slideDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        /* Integrated Trust Features */
+        .hero-features {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+            width: 100%; max-width: 400px; margin: 15px auto 30px;
+            opacity: 0; animation: slideUp 0.9s ease 0.7s forwards;
+        }
+        .hero-feature {
+            display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px;
+        }
+        .hero-feature svg { 
+            color: var(--gold); width: 34px; height: 34px; 
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4)); 
+        }
+        .hero-feature span { 
+            color: #E8E3D8; font-size: 0.9rem; font-weight: 600; line-height: 1.3; 
+        }
 
         .cta-buttons {
-            display: flex; flex-direction: column; gap: 12px;
-            width: 100%; max-width: 420px; margin: 0 auto;
+            display: flex; flex-direction: column; gap: 14px;
+            width: 100%; max-width: 380px; margin: 0 auto;
             opacity: 0; animation: slideUp 0.9s ease 0.8s forwards;
         }
         .cta-button {
@@ -276,6 +248,22 @@
             box-shadow: none;
         }
         .cta-button.secondary:hover { background: rgba(255,255,255,0.08); border-color: var(--white); }
+
+        .hero-visual {
+            width: 100%; display: flex; justify-content: center; align-items: flex-end;
+            position: relative; z-index: 5;
+            opacity: 0; animation: fadeReveal 1.2s ease 0.4s forwards;
+        }
+        
+        .hero-cutout {
+            width: 100%; max-width: 420px; height: auto; display: block;
+            object-fit: contain; object-position: bottom;
+            /* Drop shadow makes the cutout image pop off the background */
+            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.6));
+        }
+
+        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeReveal { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
         /* ===== About ===== */
         .about { padding: 80px 0; background: var(--white); }
@@ -433,7 +421,6 @@
         .contact { padding: 80px 0; background: var(--navy-gradient); color: var(--white); }
         .contact-content { display: flex; flex-direction: column; gap: 40px; align-items: stretch; }
         
-        /* Updated Contact Header */
         .contact h2 { font-family: 'Frank Ruhl Libre', serif; font-size: clamp(2rem, 4vw, 2.6rem); font-weight: 700; margin-bottom: 2rem; color: var(--white); }
         
         .contact-info { display: flex; flex-direction: column; gap: 16px; }
@@ -450,14 +437,13 @@
         }
         .contact-item .label { color: #9AA4B2; font-size: 0.8rem; font-weight: 600; margin-bottom: 2px; display: block; }
         
-        /* Premium links for Contact Info */
         .contact-item a, .contact-item span.value {
-            color: #E8E3D8 !important; /* Soft premium white/ivory */
+            color: #E8E3D8 !important; 
             font-weight: 600;
             display: inline-block; 
             min-height: 24px; 
             text-decoration: underline;
-            text-decoration-color: rgba(201, 162, 75, 0.5); /* Subtle gold underline */
+            text-decoration-color: rgba(201, 162, 75, 0.5); 
             text-decoration-thickness: 1px;
             text-underline-offset: 5px;
             transition: all 0.3s ease;
@@ -472,14 +458,13 @@
             backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.12); box-shadow: var(--shadow-large);
         }
         
-        /* Updated Form Header */
         .contact-form h3 { 
             font-family: 'Frank Ruhl Libre', serif; 
             font-size: 1.5rem; 
             font-weight: 700; 
             margin-bottom: 24px; 
             text-align: center; 
-            color: var(--gold); /* Switched to Gold */
+            color: var(--gold); 
         }
         
         .form-group { margin-bottom: 20px; }
@@ -503,14 +488,12 @@
         .submit-button:hover { transform: translateY(-2px); box-shadow: var(--shadow-large); }
         .submit-button:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
 
-        /* Input validation state */
         .form-group input.input-error,
         .form-group textarea.input-error {
             border-color: #ef4444;
             box-shadow: 0 0 0 4px rgba(239,68,68,0.15);
         }
 
-        /* WhatsApp follow-up button (shown after successful submit) */
         #whatsappFollowup { margin-top: 14px; }
         .whatsapp-followup-btn {
             display: flex; align-items: center; justify-content: center; gap: 10px;
@@ -526,11 +509,9 @@
         .whatsapp-followup-btn.show { opacity: 1; transform: translateY(0); }
         .whatsapp-followup-btn:hover { box-shadow: var(--shadow-large); transform: translateY(-2px); }
 
-        /* Google Maps embed */
         .map-embed-wrap {
             margin-top: 20px;
-            width: 100%;
-            height: 260px;
+            width: 100%; height: 260px;
             border-radius: var(--radius-lg);
             overflow: hidden;
             box-shadow: var(--shadow-large);
@@ -544,11 +525,10 @@
         .footer-section h3 { font-family: 'Frank Ruhl Libre', serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 14px; color: var(--white); }
         .footer-section p { margin-bottom: 10px; color: #C7CDD7 !important; }
         
-        /* Premium links for Footer */
         .footer-section a, .footer-bottom a {
-            color: #C7CDD7 !important; /* Soft elegant silver/gray */
+            color: #C7CDD7 !important; 
             text-decoration: underline;
-            text-decoration-color: rgba(199, 205, 215, 0.2); /* Very subtle underline */
+            text-decoration-color: rgba(199, 205, 215, 0.2); 
             text-decoration-thickness: 1px;
             text-underline-offset: 5px;
             transition: all 0.3s ease;
@@ -571,12 +551,9 @@
         .quick-contact-btn.phone { background: var(--gold-gradient); color: #1A1408; }
         .quick-contact-btn.whatsapp { background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); }
         .quick-contact-btn.back-to-top {
-            background: var(--navy);
-            color: var(--gold);
+            background: var(--navy); color: var(--gold);
             border: 1px solid rgba(201,162,75,0.35);
-            cursor: pointer;
-            opacity: 0;
-            transform: translateY(10px) scale(0.9);
+            cursor: pointer; opacity: 0; transform: translateY(10px) scale(0.9);
             transition: opacity 0.25s ease, transform 0.25s ease, background 0.25s ease;
         }
         .quick-contact-btn.back-to-top.show { opacity: 1; transform: translateY(0) scale(1); }
@@ -618,21 +595,28 @@
             input, textarea, select { font-size: 16px !important; }
         }
 
-        /* ===== Tablet ===== */
+        /* ===== Tablet & Desktop Overrides ===== */
         @media (min-width: 768px) {
             .container { padding: 0 32px; }
             .nav-links { display: flex; gap: 4px; }
             .nav-toggle { display: none; }
 
-            .hero-content { flex-direction: row; gap: 60px; text-align: right; align-items: center; }
-            .hero-visual { order: 0; flex: 0 0 auto; width: auto; margin-bottom: 0; }
-            .hero-text { flex: 1; text-align: right; margin: 0; }
-            .hero-portrait-frame { max-width: 340px; }
-            .cta-buttons { flex-direction: row; justify-content: flex-start; gap: 16px; max-width: none; margin: 0; }
-            .cta-button { flex: 0 0 auto; }
+            /* Hero Layout Desktop */
+            .hero { padding: 120px 0 0 0; }
+            .hero-container { flex-direction: row; align-items: center; justify-content: space-between; }
+            
+            .hero-text { flex: 1; text-align: right; align-items: flex-start; padding-bottom: 60px; padding-left: 20px; }
             .hero-badge { margin: 0; }
-            .hero .subtitle { margin: 0; }
+            .hero h1 .highlight { display: inline-block; margin-top: 0; }
+            .hero .subtitle { margin: 0 0 20px 0; }
+            
+            .hero-features { grid-template-columns: repeat(4, 1fr); max-width: 500px; margin: 20px 0 35px; gap: 20px; }
+            .cta-buttons { flex-direction: row; justify-content: flex-start; margin: 0; max-width: none; }
+            
+            .hero-visual { flex: 0 0 45%; max-width: 550px; align-self: flex-end; margin-bottom: -5px; } 
+            .hero-cutout { max-width: 100%; }
 
+            /* Other Sections */
             .about-content { flex-direction: row; gap: 60px; text-align: right; align-items: center; }
             .about-text { flex: 1; }
             .about-text p { margin-inline: 0; }
@@ -654,11 +638,8 @@
             .notification.show { transform: translateX(0); }
         }
 
-        /* ===== Desktop ===== */
         @media (min-width: 1024px) {
             .services-grid { grid-template-columns: repeat(3, 1fr); }
-            .hero-portrait-frame { max-width: 400px; }
-            .trust-divider { display: block; }
             .why-grid { grid-template-columns: repeat(4, 1fr); }
             .process-steps { grid-template-columns: repeat(4, 1fr); }
         }
@@ -667,7 +648,7 @@
 <body>
     <header class="floating-nav">
         <div class="nav-inner">
-            <a href="#hero" class="nav-logo" aria-label="עו"ד משה נעמן - חזרה לדף הבית">עו"ד <span>משה נעמן</span></a>
+            <a href="#hero" class="nav-logo" aria-label='עו"ד משה נעמן - חזרה לדף הבית'>עו"ד <span>משה נעמן</span></a>
 
             <nav class="nav-links" aria-label="ניווט ראשי">
                 <a href="#hero" class="floating-nav-item active" aria-label="עבור לדף הבית">
@@ -743,67 +724,50 @@
 
     <main>
     <section class="hero" id="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-visual">
-                    <div class="hero-portrait-frame">
-                        <img src="image1.jpg" alt='עו"ד ונוטריון משה נעמן, תמונת פרופיל מקצועית' width="420" height="525">
-                        <div class="hero-floating-badge">
-                            <div class="hero-seal" aria-hidden="true">
-                                <img src="image2.jpg" alt="לוגו המשרד" width="92" height="92">
-                            </div>
-                            <div class="hero-floating-badge-text">
-                                <strong>20+ שנות ניסיון</strong>
-                                <span>עו"ד ונוטריון מוסמך</span>
-                            </div>
-                        </div>
+        <div class="container hero-container">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    עורך דין ונוטריון מוסמך
+                </div>
+                
+                <h1>עורך דין ונוטריון <span class="highlight">משה נעמן</span></h1>
+                <p class="subtitle">שירותים משפטיים מקצועיים ואמינים, עם ניסיון וותק של מעל 20 שנה במערכת המשפט הישראלית.</p>
+                
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <span>מעל 20<br>שנות ניסיון</span>
+                    </div>
+                    <div class="hero-feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 16h2a2 2 0 0 0 2-2v-3.5a1.5 1.5 0 0 0-2.6-1.03L12 14"/><path d="M8 16H6a2 2 0 0 1-2-2v-3.5a1.5 1.5 0 0 1 2.6-1.03L12 14"/><path d="M12 2v4"/><path d="M12 14V8"/><path d="M5 21h14"/></svg>
+                        <span>נוטריון<br>מוסמך</span>
+                    </div>
+                    <div class="hero-feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        <span>ליווי אישי<br>צמוד</span>
+                    </div>
+                    <div class="hero-feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <span>זמינות גם<br>בדחיפות</span>
                     </div>
                 </div>
 
-                <div class="hero-text">
-                    <div class="hero-badge">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        עורך דין ונוטריון מוסמך
-                    </div>
-                    <h1>עורך דין ונוטריון <span class="highlight">משה נעמן</span></h1>
-                    <p class="subtitle">שירותים משפטיים מקצועיים ואמינים, עם ניסיון וותק של מעל 20 שנה במערכת המשפט הישראלית</p>
-                    <div class="cta-buttons">
-                        <a href="https://wa.me/972544679144" class="cta-button" target="_blank" rel="noopener" aria-label="קבע פגישת ייעוץ בוואטסאפ, נפתח בחלון חדש">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4a8.94 8.94 0 0 0-7.74 13.4L3 21l3.7-1.27a8.93 8.93 0 0 0 5.36 1.72h.01a8.94 8.94 0 0 0 8.93-8.85 8.86 8.86 0 0 0-2.5-6.28zM12.06 19.8a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.96.94-2.73-.18-.28a7.4 7.4 0 1 1 6.1 3.25zm4.1-5.5c-.22-.11-1.31-.65-1.51-.72-.2-.07-.35-.11-.5.11-.15.22-.57.72-.7.86-.13.15-.26.16-.48.05-1.32-.66-2.18-1.18-3.05-2.67-.23-.4.23-.37.66-1.23.07-.15.04-.27-.03-.38-.07-.11-.62-1.5-.85-2.05-.22-.53-.45-.46-.62-.47-.16-.01-.34-.01-.52-.01-.18 0-.46.07-.71.34-.25.27-.94.92-.94 2.24 0 1.32.96 2.6 1.1 2.78.13.18 1.83 2.8 4.45 3.81 2.1.8 2.52.64 2.97.6.45-.04 1.45-.59 1.66-1.17.2-.57.2-1.06.14-1.17-.06-.1-.21-.16-.43-.27z"/></svg>
-                            קבע פגישת ייעוץ בווטסאפ
-                        </a>
-                        <a href="#contact" class="cta-button secondary" aria-label="עבור לטופס צור קשר טלפוני">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                            צור קשר טלפוני
-                        </a>
-                    </div>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/972544679144" class="cta-button" target="_blank" rel="noopener" aria-label="קבע פגישת ייעוץ בוואטסאפ, נפתח בחלון חדש">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4a8.94 8.94 0 0 0-7.74 13.4L3 21l3.7-1.27a8.93 8.93 0 0 0 5.36 1.72h.01a8.94 8.94 0 0 0 8.93-8.85 8.86 8.86 0 0 0-2.5-6.28zM12.06 19.8a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.96.94-2.73-.18-.28a7.4 7.4 0 1 1 6.1 3.25zm4.1-5.5c-.22-.11-1.31-.65-1.51-.72-.2-.07-.35-.11-.5.11-.15.22-.57.72-.7.86-.13.15-.26.16-.48.05-1.32-.66-2.18-1.18-3.05-2.67-.23-.4.23-.37.66-1.23.07-.15.04-.27-.03-.38-.07-.11-.62-1.5-.85-2.05-.22-.53-.45-.46-.62-.47-.16-.01-.34-.01-.52-.01-.18 0-.46.07-.71.34-.25.27-.94.92-.94 2.24 0 1.32.96 2.6 1.1 2.78.13.18 1.83 2.8 4.45 3.81 2.1.8 2.52.64 2.97.6.45-.04 1.45-.59 1.66-1.17.2-.57.2-1.06.14-1.17-.06-.1-.21-.16-.43-.27z"/></svg>
+                        קבע פגישת ייעוץ בווטסאפ
+                    </a>
+                    <a href="#contact" class="cta-button secondary" aria-label="עבור לטופס צור קשר טלפוני">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        צור קשר טלפוני
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section class="trust-bar" aria-label="עובדות מהירות על המשרד">
-        <div class="container">
-            <div class="trust-bar-inner">
-                <span class="trust-item">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    מעל 20 שנות ניסיון
-                </span>
-                <span class="trust-divider" aria-hidden="true"></span>
-                <span class="trust-item">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 16h2a2 2 0 0 0 2-2v-3.5a1.5 1.5 0 0 0-2.6-1.03L12 14"/><path d="M8 16H6a2 2 0 0 1-2-2v-3.5a1.5 1.5 0 0 1 2.6-1.03L12 14"/><path d="M12 2v4"/><path d="M12 14V8"/><path d="M5 21h14"/></svg>
-                    נוטריון מוסמך
-                </span>
-                <span class="trust-divider" aria-hidden="true"></span>
-                <span class="trust-item">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                    ליווי אישי צמוד
-                </span>
-                <span class="trust-divider" aria-hidden="true"></span>
-                <span class="trust-item">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    זמינות גם בדחיפות
-                </span>
+            <div class="hero-visual">
+                <!-- IMPORTANT: Ensure image1.png is a transparent cutout image -->
+                <img src="image1.png" alt='עו"ד ונוטריון משה נעמן' class="hero-cutout" width="500" height="600">
             </div>
         </div>
     </section>
@@ -842,7 +806,7 @@
                         <svg class="quote-mark" width="34" height="26" viewBox="0 0 34 26" fill="currentColor" aria-hidden="true"><path d="M0 26V15.6C0 6.9 5.4 1.3 14 0l1.7 4.3C10.8 5.6 8 8.8 8 13h6v13H0Zm18 0V15.6c0-8.7 5.4-14.3 14-15.6l1.7 4.3C28.8 5.6 26 8.8 26 13h6v13H18Z"/></svg>
                         <p>כל תיק מתחיל ומסתיים באדם שעומד מולי. המטרה שלי היא לא רק לספק ייצוג משפטי מקצועי, אלא להעניק ללקוחותיי שקט נפשי לאורך כל הדרך.</p>
                         <footer>
-                            <img src="image1.jpg" alt='עו"ד משה נעמן' loading="lazy" width="52" height="52">
+                            <img src="image2.jpg" alt='לוגו משרד' loading="lazy" width="52" height="52">
                             <div>
                                 <strong>עו"ד משה נעמן</strong>
                                 <span>עורך דין ונוטריון</span>
@@ -921,7 +885,7 @@
                     <div class="why-icon" aria-hidden="true">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M3 16v5h5"/><path d="M21 16v5h-5"/><circle cx="12" cy="12" r="3"/></svg>
                     </div>
-                    <h3>ניסיון רב-תחומי</h3>
+                    <h3>ניסיון ר-תחומי</h3>
                     <p>מעל 20 שנה של עשייה בפלילי, מקרקעין, ירושות ונוטריון, שמאפשרים הבנה רחבה של ההשלכות של כל החלטה.</p>
                 </article>
                 <article class="why-card fade-in">
