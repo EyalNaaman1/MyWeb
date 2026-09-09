@@ -111,7 +111,7 @@
         /* ===== Hero ===== */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(160deg, #070d14 0%, #111e30 55%, #0b121c 100%);
+            background-color: #070d14; /* צבע גיבוי כהה */
             color: var(--white);
             position: relative;
             overflow: hidden;
@@ -119,24 +119,36 @@
             align-items: center; 
             padding: 120px 0 0 0;
         }
+        
+        /* שכבת התמונה המטושטשת */
         .hero::before {
+            content: '';
+            position: absolute; 
+            inset: -20px; /* מתיחה קלה כדי להסתיר את השוליים המטושטשים */
+            background-image: url('office-bg.jpg'); /* התמונה שהכנת */
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px); /* אפקט הטשטוש שביקשת */
+            opacity: 0.35; /* שקיפות שמבטיחה שהטקסט יישאר קריא וברור */
+            z-index: 0;
+        }
+        
+        /* שכבת הגרדיאנט והתאורה מעל התמונה */
+        .hero::after {
             content: '';
             position: absolute; inset: 0;
             background:
-                radial-gradient(circle at 75% 30%, rgba(201,162,75,0.15) 0%, transparent 55%),
+                linear-gradient(160deg, rgba(7, 13, 20, 0.95) 0%, rgba(17, 30, 48, 0.65) 50%, rgba(11, 18, 28, 0.95) 100%),
+                radial-gradient(circle at 75% 30%, rgba(201,162,75,0.15) 0%, transparent 60%),
                 radial-gradient(circle at 20% 80%, rgba(201,162,75,0.08) 0%, transparent 60%);
             z-index: 1;
-        }
-        .hero::after {
-            content: '';
-            position: absolute; inset: 0; opacity: 0.03; pointer-events: none; z-index: 1;
-            background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 38px, var(--gold) 39px);
+            pointer-events: none;
         }
         
         .hero-container {
             width: 100%;
             display: flex; flex-direction: column;
-            position: relative; z-index: 2;
+            position: relative; z-index: 2; /* מוודא שכל התוכן יושב מעל הרקע */
             height: 100%;
         }
 
