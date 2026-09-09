@@ -135,7 +135,6 @@
         .hero::after {
             content: '';
             position: absolute; inset: 0;
-            /* גרדיאנט שמתחשב בזה שהטקסט בצד שמאל - הצד השמאלי כהה יותר לקריאות */
             background:
                 linear-gradient(to right, rgba(11, 18, 28, 0.95) 0%, rgba(7, 13, 20, 0.8) 40%, rgba(17, 30, 48, 0.15) 100%),
                 radial-gradient(circle at 25% 30%, rgba(201,162,75,0.15) 0%, transparent 60%);
@@ -146,7 +145,7 @@
         .hero-container {
             width: 100%;
             display: flex; 
-            flex-direction: column-reverse; /* במובייל - טקסט למעלה, תמונה למטה */
+            flex-direction: column-reverse; 
             position: relative; z-index: 2; 
             height: 100%;
         }
@@ -236,7 +235,7 @@
         }
         .cta-button.secondary:hover { background: var(--navy-2); color: var(--gold); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
 
-        /* THE NEW HERO VISUAL STRUCTURE (LAWYER + DESK) */
+        /* THE NEW HERO VISUAL STRUCTURE (LAWYER IN FRONT, DESK BLURRED BEHIND) */
         .hero-visual {
             width: 100%; display: flex; justify-content: center; align-items: flex-end;
             position: relative; z-index: 5;
@@ -246,25 +245,26 @@
         }
         
         .hero-lawyer {
-            width: 100%; max-width: 380px; height: auto; display: block;
+            width: 100%; max-width: 450px; height: auto; display: block;
             object-fit: contain; object-position: bottom;
-            position: relative; z-index: 1; /* יושב מאחורי השולחן */
-            margin-bottom: 20px; /* מרים אותו קצת שייראה עומד מאחורי השולחן */
-            /* צבע וטונים שמתאימים לחדר החשוך */
-            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.7)) brightness(0.9) contrast(1.05) sepia(0.15);
+            position: relative; 
+            z-index: 2; /* עו"ד מעל השולחן */
+            margin-bottom: 0px; 
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.7)) brightness(0.95) contrast(1.05) sepia(0.1);
         }
 
         .hero-desk {
             position: absolute;
-            bottom: -20px;
+            bottom: 20px; /* השולחן קצת למעלה כדי שהעו"ד יכסה את המרכז */
             left: 50%;
             transform: translateX(-50%);
-            width: 120%; /* נפרס על פני כל התחתית */
-            max-width: 800px;
+            width: 100%; 
+            max-width: 650px; 
             height: auto;
-            z-index: 2; /* מסתיר את תחתית העו"ד */
+            z-index: 1; /* שולחן מאחורי העו"ד */
             pointer-events: none;
-            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.8));
+            /* הוספת טשטוש והכהיה קלה לשולחן ליצירת עומק שדה (Depth of Field) */
+            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.8)) blur(2px) brightness(0.85);
         }
 
         @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
@@ -424,7 +424,7 @@
         .process-step h3 { font-family: 'Frank Ruhl Libre', serif; font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; color: var(--white); }
         .process-step p { color: #B8C0CC; font-size: 0.9rem; line-height: 1.65; max-width: 260px; margin: 0 auto; }
 
-        /* ===== Final CTA band (Redesigned for Luxury) ===== */
+        /* ===== Final CTA band ===== */
         .final-cta { 
             background: var(--navy-gradient); 
             padding: 80px 0; 
@@ -602,7 +602,7 @@
 
         /* ===== Quick contact (Moved to RIGHT) ===== */
         .quick-contact { 
-            position: fixed; bottom: 20px; right: 20px; left: auto; /* עבר ימינה */
+            position: fixed; bottom: 20px; right: 20px; left: auto; 
             z-index: 1500; display: flex; flex-direction: column; gap: 12px; 
         }
         .quick-contact-btn {
@@ -611,7 +611,6 @@
         }
         .quick-contact-btn:hover { transform: scale(1.1); }
         
-        /* Floating Button Refinements for Luxury */
         .quick-contact-btn.phone { background: var(--gold-gradient); color: #1A1408; }
         .quick-contact-btn.whatsapp { 
             background: var(--navy); 
@@ -685,7 +684,7 @@
             /* Hero Layout Desktop - TEXT ON LEFT, VISUAL ON RIGHT */
             .hero { padding: 130px 0 0 0; }
             .hero-container { 
-                flex-direction: row; /* Because direction is RTL, row makes the first element go Right, second element go Left */
+                flex-direction: row; 
                 align-items: center; 
                 justify-content: space-between; 
             }
@@ -695,7 +694,7 @@
                 text-align: right; 
                 align-items: flex-start; 
                 padding-bottom: 60px; 
-                padding-right: 30px; /* מרווח מהתמונה שמצד ימין */
+                padding-right: 30px; 
             }
             .hero-badge { margin: 0; }
             .hero h1 .highlight { display: inline-block; margin-top: 0; }
@@ -705,21 +704,24 @@
             
             .cta-buttons { flex-direction: row; justify-content: flex-start; margin: 0; max-width: none; }
             
-            /* HERO VISUAL DESKTOP FIX (LAWYER + DESK ON RIGHT) */
+            /* HERO VISUAL DESKTOP FIX */
             .hero-visual { 
                 flex: 0 0 50%; 
-                max-width: 600px; 
+                max-width: 650px; 
                 align-self: flex-end; 
                 margin: 0; 
-                min-height: 600px; /* גובה מינימלי כדי לשמור על פרופורציות */
+                min-height: 600px; 
             } 
             .hero-lawyer { 
-                max-width: 380px; 
-                margin-left: 20px; /* דוחף קצת הצידה שלא יוסתר מדי ע"י המאזניים */
+                max-width: 500px; 
+                margin-left: 0; 
             }
             .hero-desk {
-                width: 120%;
-                left: 0; transform: none; /* מתיישר ימינה במקום להיות ממורכז */
+                width: 110%;
+                max-width: 700px;
+                left: 10%; 
+                transform: translateX(-10%); 
+                bottom: 40px; 
             }
 
             /* Other Sections */
@@ -833,9 +835,7 @@
         <div class="container hero-container">
             <!-- IMPORTANT: THE VISUAL DIV IS FIRST NOW SO IT GOES TO THE RIGHT IN RTL -->
             <div class="hero-visual">
-                <!-- העו"ד יושב מאחור -->
                 <img src="image1.png" alt='עו"ד ונוטריון משה נעמן' class="hero-lawyer">
-                <!-- השולחן יושב מקדימה (דרוש קובץ desk.png שקוף) -->
                 <img src="desk.png" alt='שולחן משרדי' class="hero-desk">
             </div>
             
@@ -1138,7 +1138,6 @@
             </div>
         </div>
     </section>
-    </main>
 
     <section class="contact" id="contact">
         <div class="container">
