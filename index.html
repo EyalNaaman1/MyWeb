@@ -111,7 +111,7 @@
         /* ===== Hero ===== */
         .hero {
             min-height: 100vh;
-            background-color: #070d14; /* צבע גיבוי כהה */
+            background-color: #070d14; 
             color: var(--white);
             position: relative;
             overflow: hidden;
@@ -120,27 +120,23 @@
             padding: 120px 0 0 0;
         }
         
-        /* שכבת התמונה המטושטשת */
         .hero::before {
             content: '';
             position: absolute; 
-            inset: -20px; /* מתיחה קלה כדי להסתיר את השוליים המטושטשים */
-            background-image: url('office-bg.jpg'); /* התמונה שהכנת */
+            inset: -20px; 
+            background-image: url('office-bg.jpg'); /* רקע המשרד */
             background-size: cover;
             background-position: center;
-            filter: blur(4px); /* הורדנו את הטשטוש כדי שצורת הספרייה תהיה ברורה יותר */
-            opacity: 0.85; /* העלינו משמעותית את נראות התמונה (הייתה 0.35) */
+            filter: blur(4px); 
+            opacity: 0.85; 
             z-index: 0;
         }
         
-        /* שכבת הגרדיאנט והתאורה מעל התמונה */
         .hero::after {
             content: '';
             position: absolute; inset: 0;
             background:
-                /* שכבת הכהיה עדינה יותר שנותנת לתמונה לבלוט במרכז */
                 linear-gradient(160deg, rgba(7, 13, 20, 0.8) 0%, rgba(17, 30, 48, 0.25) 50%, rgba(11, 18, 28, 0.8) 100%),
-                /* נגיעות האור המוזהבות */
                 radial-gradient(circle at 75% 30%, rgba(201,162,75,0.25) 0%, transparent 60%),
                 radial-gradient(circle at 20% 80%, rgba(201,162,75,0.15) 0%, transparent 60%);
             z-index: 1;
@@ -150,7 +146,7 @@
         .hero-container {
             width: 100%;
             display: flex; flex-direction: column;
-            position: relative; z-index: 2; /* מוודא שכל התוכן יושב מעל הרקע */
+            position: relative; z-index: 2; 
             height: 100%;
         }
 
@@ -176,6 +172,7 @@
             font-weight: 700; color: var(--white);
             opacity: 0; animation: slideUp 0.9s ease 0.4s forwards;
             line-height: 1.1; margin-bottom: 0.2rem;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.5);
         }
         .hero h1 .highlight { 
             color: var(--gold); 
@@ -189,11 +186,12 @@
             line-height: 1.6;
             opacity: 0; animation: slideUp 0.9s ease 0.6s forwards;
             max-width: 540px; margin: 0 auto 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         .hero-features {
             display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
-            width: 100%; max-width: 400px; margin: 15px auto 30px;
+            width: 100%; max-width: 400px; margin: 15px auto 45px; /* הוספנו מרווח למטה (45px) */
             opacity: 0; animation: slideUp 0.9s ease 0.7s forwards;
         }
         .hero-feature {
@@ -201,10 +199,11 @@
         }
         .hero-feature svg { 
             color: var(--gold); width: 34px; height: 34px; 
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4)); 
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6)); 
         }
         .hero-feature span { 
             color: #E8E3D8; font-size: 0.9rem; font-weight: 600; line-height: 1.3; 
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         .cta-buttons {
@@ -227,27 +226,31 @@
         .cta-button:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(201,162,75,0.35); }
         .cta-button.secondary {
             background: transparent;
-            border: 2px solid rgba(255,255,255,0.3);
+            border: 2px solid rgba(255,255,255,0.4);
             color: var(--white);
             box-shadow: none;
+            backdrop-filter: blur(4px);
         }
-        .cta-button.secondary:hover { background: rgba(255,255,255,0.08); border-color: var(--white); }
+        .cta-button.secondary:hover { background: rgba(255,255,255,0.1); border-color: var(--gold); color: var(--gold); }
 
         .hero-visual {
             width: 100%; display: flex; justify-content: center; align-items: flex-end;
             position: relative; z-index: 5;
             opacity: 0; animation: fadeReveal 1.2s ease 0.4s forwards;
-            margin-top: 40px;
+            margin-top: 10px;
         }
         
-        /* THE FIX FOR THE IMAGE BLENDING */
+        /* THE FIX FOR THE IMAGE BLENDING & COLOR GRADING */
         .hero-cutout {
-            width: 100%; max-width: 500px; height: auto; display: block;
+            width: 100%; max-width: 650px; /* תמונה גדולה יותר */
+            height: auto; display: block;
             object-fit: contain; object-position: bottom;
-            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5));
-            /* This makes the bottom 25% of the image gradually fade out */
-            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
-            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+            
+            /* הפילטר שצובע את התמונה בצבעי המשרד ונותן עומק */
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.85)) brightness(0.85) contrast(1.08) sepia(0.2);
+            
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
         }
 
         @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
@@ -280,7 +283,6 @@
 
         .about-visual { width: 100%; max-width: 480px; margin: 0 auto; }
         
-        /* THE FIX FOR THE QUOTE BOX */
         .pull-quote {
             position: relative;
             background: var(--navy-gradient); color: var(--white);
@@ -298,14 +300,14 @@
             text-align: center;
         }
         .pull-quote footer { 
-            display: flex; align-items: center; justify-content: center; /* Centers the logo and text horizontally */
+            display: flex; align-items: center; justify-content: center; 
             gap: 16px; 
-            background: transparent !important; /* Forces removal of any weird black boxes */
+            background: transparent !important; 
             margin: 0; padding: 0;
         }
         .pull-quote footer img {
             width: 64px; height: 64px; border-radius: 50%; object-fit: contain;
-            background-color: var(--white); /* White background for the logo to avoid black bleeding */
+            background-color: var(--white); 
             border: 2px solid rgba(201,162,75,0.8); flex-shrink: 0;
             padding: 4px;
         }
@@ -408,15 +410,57 @@
         .process-step h3 { font-family: 'Frank Ruhl Libre', serif; font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; color: var(--white); }
         .process-step p { color: #B8C0CC; font-size: 0.9rem; line-height: 1.65; max-width: 260px; margin: 0 auto; }
 
-        /* ===== Final CTA band ===== */
-        .final-cta { background: var(--gold-gradient); padding: 64px 0; text-align: center; }
-        .final-cta h2 { font-family: 'Frank Ruhl Libre', serif; font-size: clamp(1.7rem, 5vw, 2.3rem); font-weight: 700; color: #1A1408; margin-bottom: 14px; }
-        .final-cta p { color: #4a3413; font-size: 1.02rem; line-height: 1.6; margin-bottom: 30px; max-width: 520px; margin-inline: auto; }
-        .final-cta-buttons { display: flex; flex-direction: column; gap: 14px; max-width: 420px; margin: 0 auto; }
-        .final-cta .cta-button.dark { background: var(--navy); color: var(--white); box-shadow: var(--shadow-medium); }
-        .final-cta .cta-button.dark:hover { background: var(--navy-2); transform: translateY(-2px); box-shadow: var(--shadow-large); }
-        .final-cta .cta-button.outline-dark { background: transparent; border: 2px solid rgba(15,27,45,0.35); color: #1A1408; box-shadow: none; }
-        .final-cta .cta-button.outline-dark:hover { background: rgba(15,27,45,0.08); border-color: #1A1408; }
+        /* ===== Final CTA band (Redesigned for Luxury) ===== */
+        .final-cta { 
+            background: var(--navy-gradient); 
+            padding: 80px 0; 
+            text-align: center; 
+            position: relative;
+            border-top: 1px solid rgba(201,162,75,0.15);
+            border-bottom: 1px solid rgba(201,162,75,0.15);
+        }
+        .final-cta::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(201,162,75,0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .final-cta h2 { 
+            font-family: 'Frank Ruhl Libre', serif; 
+            font-size: clamp(2rem, 5vw, 2.8rem); 
+            font-weight: 700; 
+            color: var(--gold); 
+            margin-bottom: 16px; 
+            position: relative; z-index: 2; 
+        }
+        .final-cta p { 
+            color: #E8E3D8; 
+            font-size: 1.1rem; 
+            line-height: 1.7; 
+            margin-bottom: 40px; 
+            max-width: 600px; 
+            margin-inline: auto; 
+            position: relative; z-index: 2; 
+        }
+        .final-cta-buttons { 
+            display: flex; flex-direction: column; gap: 16px; 
+            max-width: 420px; margin: 0 auto; 
+            position: relative; z-index: 2; 
+        }
+        .final-cta .cta-button.primary { 
+            background: var(--gold-gradient); 
+            color: #1A1408; 
+            box-shadow: 0 8px 25px rgba(201,162,75,0.25);
+            border: 2px solid transparent;
+        }
+        .final-cta .cta-button.primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(201,162,75,0.35); }
+        .final-cta .cta-button.outline { 
+            background: transparent; 
+            border: 2px solid rgba(201,162,75,0.4); 
+            color: var(--white); 
+            box-shadow: none; 
+        }
+        .final-cta .cta-button.outline:hover { background: rgba(201,162,75,0.1); border-color: var(--gold); }
 
         /* ===== Contact ===== */
         .contact { padding: 80px 0; background: var(--navy-gradient); color: var(--white); }
@@ -549,8 +593,19 @@
             color: white; text-decoration: none; box-shadow: var(--shadow-large); transition: all 0.25s ease;
         }
         .quick-contact-btn:hover { transform: scale(1.1); }
+        
+        /* Floating Button Refinements for Luxury */
         .quick-contact-btn.phone { background: var(--gold-gradient); color: #1A1408; }
-        .quick-contact-btn.whatsapp { background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); }
+        .quick-contact-btn.whatsapp { 
+            background: var(--navy); 
+            color: var(--gold); 
+            border: 1px solid rgba(201,162,75,0.4);
+        }
+        .quick-contact-btn.whatsapp:hover {
+            background: var(--navy-2);
+            border-color: var(--gold);
+        }
+        
         .quick-contact-btn.back-to-top {
             background: var(--navy); color: var(--gold);
             border: 1px solid rgba(201,162,75,0.35);
@@ -611,11 +666,17 @@
             .hero h1 .highlight { display: inline-block; margin-top: 0; }
             .hero .subtitle { margin: 0 0 20px 0; }
             
-            .hero-features { grid-template-columns: repeat(4, 1fr); max-width: 500px; margin: 20px 0 35px; gap: 20px; }
+            .hero-features { grid-template-columns: repeat(4, 1fr); max-width: 500px; margin: 20px 0 45px; gap: 20px; }
             .cta-buttons { flex-direction: row; justify-content: flex-start; margin: 0; max-width: none; }
             
             /* HERO VISUAL DESKTOP FIX */
-            .hero-visual { flex: 0 0 45%; max-width: 550px; align-self: flex-end; margin: 0; } 
+            .hero-visual { 
+                flex: 0 0 50%; 
+                max-width: 750px; 
+                align-self: flex-end; 
+                margin: 0; 
+                margin-bottom: -15px; 
+            } 
             .hero-cutout { max-width: 100%; }
 
             /* Other Sections */
@@ -769,7 +830,7 @@
 
             <div class="hero-visual">
                 <!-- IMPORTANT: Ensure image1.png is a transparent cutout image -->
-                <img src="image1.png" alt='עו"ד ונוטריון משה נעמן' class="hero-cutout" width="500" height="600">
+                <img src="image1.png" alt='עו"ד ונוטריון משה נעמן' class="hero-cutout" width="650" height="780">
             </div>
         </div>
     </section>
@@ -1014,23 +1075,23 @@
         </div>
     </section>
 
+    <!-- Final CTA Redesigned for Luxury Theme -->
     <section class="final-cta" aria-label="קריאה ליצירת קשר">
         <div class="container">
             <h2>מוכנים להתחיל?</h2>
             <p>שיחת ייעוץ ראשונית תעזור לך להבין בדיוק איפה אתה עומד ומה הצעד הבא. השיחה איתי ולא עם מזכירה.</p>
             <div class="final-cta-buttons">
-                <a href="https://wa.me/972544679144" class="cta-button dark" target="_blank" rel="noopener" aria-label="שלח הודעה בוואטסאפ, נפתח בחלון חדש">
+                <a href="https://wa.me/972544679144" class="cta-button primary" target="_blank" rel="noopener" aria-label="שלח הודעה בוואטסאפ, נפתח בחלון חדש">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4a8.94 8.94 0 0 0-7.74 13.4L3 21l3.7-1.27a8.93 8.93 0 0 0 5.36 1.72h.01a8.94 8.94 0 0 0 8.93-8.85 8.86 8.86 0 0 0-2.5-6.28zM12.06 19.8a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.96.94-2.73-.18-.28a7.4 7.4 0 1 1 6.1 3.25zm4.1-5.5c-.22-.11-1.31-.65-1.51-.72-.2-.07-.35-.11-.5.11-.15.22-.57.72-.7.86-.13.15-.26.16-.48.05-1.32-.66-2.18-1.18-3.05-2.67-.23-.4.23-.37.66-1.23.07-.15.04-.27-.03-.38-.07-.11-.62-1.5-.85-2.05-.22-.53-.45-.46-.62-.47-.16-.01-.34-.01-.52-.01-.18 0-.46.07-.71.34-.25.27-.94.92-.94 2.24 0 1.32.96 2.6 1.1 2.78.13.18 1.83 2.8 4.45 3.81 2.1.8 2.52.64 2.97.6.45-.04 1.45-.59 1.66-1.17.2-.57.2-1.06.14-1.17-.06-.1-.21-.16-.43-.27z"/></svg>
                     דברו איתי בווטסאפ
                 </a>
-                <a href="tel:0544679144" class="cta-button outline-dark" aria-label="התקשר עכשיו, מספר 054-4679144">
+                <a href="tel:0544679144" class="cta-button outline" aria-label="התקשר עכשיו, מספר 054-4679144">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                     התקשר עכשיו
                 </a>
             </div>
         </div>
     </section>
-    </main>
 
     <section class="contact" id="contact">
         <div class="container">
