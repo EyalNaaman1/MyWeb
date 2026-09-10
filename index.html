@@ -135,7 +135,6 @@
         .hero::after {
             content: '';
             position: absolute; inset: 0;
-            /* שינוי קריטי: גרדיאנט חלק מאוד בלי פסי הפרדה באמצע המסך */
             background:
                 linear-gradient(to right, rgba(7, 13, 20, 0.98) 0%, rgba(7, 13, 20, 0.85) 35%, rgba(7, 13, 20, 0.2) 75%, transparent 100%),
                 radial-gradient(circle at 25% 30%, rgba(201,162,75,0.15) 0%, transparent 60%);
@@ -236,34 +235,39 @@
         }
         .cta-button.secondary:hover { background: var(--navy-2); color: var(--gold); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
 
+        /* THE FIX: LAWYER IN FRONT, DESK BLURRED BEHIND */
         .hero-visual {
             width: 100%; display: flex; justify-content: center; align-items: flex-end;
             position: relative; z-index: 5;
             opacity: 0; animation: fadeReveal 1.2s ease 0.4s forwards;
-            min-height: 350px;
-            margin-top: 30px;
+            min-height: 450px;
+            margin-top: 20px;
         }
         
         .hero-lawyer {
-            width: 100%; max-width: 450px; height: auto; display: block;
-            object-fit: contain; object-position: bottom;
-            position: relative; 
-            z-index: 2; 
-            margin-bottom: 0px; 
+            position: absolute;
+            width: 160%; /* הגדלה למובייל בגלל הפרופורציה של התמונה */
+            max-width: 600px; height: auto; display: block;
+            right: 50%; 
+            transform: translateX(50%);
+            bottom: -100px; /* משיכה למטה שמסתירה את הרגליים */
+            z-index: 3; /* העו"ד בקדמת הבמה */
             filter: drop-shadow(0 20px 40px rgba(0,0,0,0.7)) brightness(0.95) contrast(1.05) sepia(0.1);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
         }
 
         .hero-desk {
             position: absolute;
-            bottom: 20px; 
-            right: 50%; /* יישור למובייל */
+            bottom: 40px; 
+            right: 50%; 
             transform: translateX(50%);
             width: 100%; 
-            max-width: 650px; 
+            max-width: 550px; 
             height: auto;
-            z-index: 1; 
+            z-index: 2; /* השולחן מאחורי העו"ד */
             pointer-events: none;
-            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.8)) blur(2px) brightness(0.85);
+            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.8)) blur(3.5px) brightness(0.85); /* טשטוש והכהיה ליצירת עומק */
         }
 
         @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
@@ -680,6 +684,7 @@
             .nav-links { display: flex; gap: 4px; }
             .nav-toggle { display: none; }
 
+            /* Hero Layout Desktop - TEXT ON LEFT, VISUAL ON RIGHT */
             .hero { padding: 130px 0 0 0; }
             .hero-container { 
                 flex-direction: row; 
@@ -708,21 +713,27 @@
                 max-width: 650px; 
                 align-self: flex-end; 
                 margin: 0; 
-                min-height: 600px; 
+                min-height: 650px; 
+                position: relative; 
             } 
             .hero-lawyer { 
-                max-width: 500px; 
-                margin-left: 0; 
+                position: absolute;
+                width: 160%; /* הגדלה משמעותית */
+                max-width: 850px; 
+                right: 8%; /* הזזה שמאלה (מרוחק מימין) */
+                bottom: -180px; /* משיכה למטה להסתרת הרגליים */
+                transform: none; /* ביטול המרכוז של המובייל */
+                z-index: 3; 
             }
-            
-            /* הזזת השולחן הכי ימינה שאפשר בלי לפגוע בפרופורציה */
             .hero-desk {
-                width: 120%;
-                max-width: 750px;
+                position: absolute;
+                width: 100%; /* הוקטן קצת */
+                max-width: 700px;
                 left: auto; 
-                right: -15%; /* הזזה חדה ימינה */
+                right: -30%; /* הזזה חזקה ימינה */
                 transform: none; 
-                bottom: 25px; 
+                bottom: 50px; 
+                z-index: 2; 
             }
 
             /* Other Sections */
