@@ -640,13 +640,16 @@
 
         /* OVERRIDE FOR ENABLE ACCESSIBILITY WIDGET (Moves it to the LEFT, prevents clipping, reduces size) */
         #enable-toolbar-trigger, 
-        #enable-floating-btn, 
-        .enable-button {
-            left: 20px !important;
-            right: auto !important;
-            bottom: 25px !important;
-            transform-origin: bottom left !important;
-        }
+            #enable-floating-btn, 
+            .enable-button {
+                left: 20px !important;
+                right: auto !important;
+                bottom: 25px !important;
+                top: auto !important; /* איפוס המיקום העליון כדי למנוע מרכוז במובייל */
+                transform-origin: bottom left !important;
+                position: fixed !important; /* וידוא שהכפתור נשאר צף תמיד ביחס למסך */
+                z-index: 9999 !important; /* מוודא שהוא תמיד מעל אלמנטים אחרים */
+            }
 
         /* ===== Legal Cookie Banner ===== */
         .cookie-banner {
