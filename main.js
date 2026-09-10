@@ -314,17 +314,40 @@ ${data.message}`;
         setTimeout(() => clearInterval(fixAllAccessibility), 5000);
     });
 
-
-// תיקון מיקום כפתור הנגישות במובייל
 window.addEventListener('load', () => {
-    const forceWidgetPosition = () => {
+    const fixAllAccessibility = setInterval(() => {
+        // --- 1. תיקוני טקסטים להנגשה ---
+        const heBtn = document.querySelector('[data-enable-lang="he_IL"]');
+        const enBtn = document.querySelector('[data-enable-lang="en_US"]');
+        const modal = document.getElementById('enable-modal');
+        if (heBtn) heBtn.setAttribute('aria-label', 'שנה שפה לעברית');
+        if (enBtn) enBtn.setAttribute('aria-label', 'Change language to English');
+        if (modal) modal.setAttribute('aria-label', 'תפריט נגישות');
+
+        const toolbar = document.getElementById('enable-toolbar-buttons');
+        if (toolbar) {
+            toolbar.setAttribute('aria-labelledby', 'enable-toolbar-trigger');
+            toolbar.removeAttribute('aria-labeledby');
+            toolbar.setAttribute('role', 'menu');
+        }
+
+        // --- 2. אכיפת מיקום אגרסיבית למובייל ---
         const trigger = document.getElementById('enable-toolbar-trigger') || document.getElementById('enable-floating-btn');
-        if (trigger) {
+        if (trigger && window.innerWidth <= 768) {
             trigger.style.setProperty('top', 'auto', 'important');
             trigger.style.setProperty('bottom', '25px', 'important');
             trigger.style.setProperty('left', '20px', 'important');
             trigger.style.setProperty('right', 'auto', 'important');
+            // ביטול המרכוז האוטומטי שהתוסף מנסה לעשות
+            trigger.style.setProperty('transform', 'none', 'important'); 
         }
-    };
-    setInterval(forceWidgetPosition, 300);
+
+        // ברגע שמצאנו את הכפתור והחלנו הכל - אפשר לעצור את הלולאה
+        if (heBtn && toolbar && trigger) {
+            clearInterval(fixAllAccessibility);
+        }
+    }, 500);
+
+    // עצירת ביטחון אחרי 5 שניות כדי לא להעמיס על הדפדפן
+    setTimeout(() => clearInterval(fixAllAccessibility), 5000);
 });
