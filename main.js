@@ -313,3 +313,17 @@ ${data.message}`;
 
         setTimeout(() => clearInterval(fixAllAccessibility), 5000);
     });
+
+// תיקון מיקום כפתור הנגישות במובייל
+window.addEventListener('load', () => {
+    const forceWidgetPosition = () => {
+        const trigger = document.getElementById('enable-toolbar-trigger') || document.getElementById('enable-floating-btn');
+        if (trigger) {
+            trigger.style.setProperty('top', 'auto', 'important');
+            trigger.style.setProperty('bottom', '25px', 'important');
+            trigger.style.setProperty('left', '20px', 'important');
+            trigger.style.setProperty('right', 'auto', 'important');
+        }
+    };
+    setInterval(forceWidgetPosition, 300);
+});
